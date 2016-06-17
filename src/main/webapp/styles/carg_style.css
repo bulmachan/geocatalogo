@@ -1,0 +1,1332 @@
+frameset{
+	margin:0em;
+	padding:0em;
+}
+frame {
+	background-image:url(../images/new_img/sfondo06.gif); 
+	background-repeat:repeat;
+	margin:0em;
+	padding:0em; 
+}
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;  
+	background-image:url(../images/new_img/sfondo06.gif); 
+	background-repeat:repeat;
+	margin:0em;
+	padding:0em;
+}
+body#mapBody{
+	background-image:none;
+	background-color: white;
+}
+
+label, input, button, select, span#labelX, span#labelY  {
+	font-family: Verdana, Arial, Helvetica, sans-serif;  
+	font-size: 0.8em;
+	font-style:normal;
+}
+
+p {
+	font-size: 0.8em;
+	font-style:normal;
+	margin:0.3em 0 0.25em 0.2em;
+	padding:0em;
+}
+
+img {
+	border: none;
+}
+
+div {   
+	margin: 0px 0px 0px 0px;
+    
+}
+
+div#listaSessioni ul {
+	margin: 0;
+	margin-top: 0.2em;
+	padding: 0; 
+	list-style: none;
+}
+
+div#listaSessioni ul li {
+	margin: 0.2em 0 0.2em 1em;
+	padding: 0;
+	padding-left: 2em;
+	list-style-position: outside;
+	background-image: url(../images/map.png);
+	background-repeat:no-repeat;
+	background-position:left top; 
+	height: 100%;
+	min-height: 50px;
+	clear:both;
+}
+
+	
+.tit_1 {
+	/*background-image:url(../images/new_img/sfondo_titolo_3_cc.gif);
+	background-repeat:repeat;*/
+	/*da usare per spostare sù e giù la scritta rispetto alla .gif*/
+	/*
+	padding: 0.3em 0em 0.3em 0.5em;
+	margin: 0em;
+	*/
+}
+
+/*h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color:#002B57;	 
+	font-weight: bold;
+	font-size:0.8em;
+	margin:0em;
+	padding:0em 0em 0.8em 0em;
+}*/
+	
+	.tit_1 a {
+		color: #ffffff;
+		text-decoration: none;
+	}
+	.tit_1 a:link {
+		color: #ffffff;
+		text-decoration: none;
+	}
+	.tit_1 a:visited {
+		color: #ffffff;
+		text-decoration: none;
+	}
+	.tit_2 {
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color: #606060;
+		font-size: 0.8em;
+		font-weight: bold;		
+		text-align: left;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	} 
+	.tit_2b {
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color:#ffffcc;	
+		font-size: 0.8em;
+		font-weight: bold;		
+	}
+	.tit_2blk {
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color:#000000;	
+		font-size: 0.8em;
+		font-weight: bold;		
+	}
+	.tit_3 {
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color: #333333;
+		font-size: 0.75em;
+		font-style: normal;
+	} 
+	.tit_3b {
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color: #606060;
+		font-size: 0.75em;
+		font-style: normal;
+		font-weight: bold;
+	}
+	.tit_idty_1 {
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color: #606060;
+		font-size: 0.7em;
+		font-weight: bold;		
+		white-space: nowrap;
+	}
+  
+	.tit_idty_2 {
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color: #606060;
+		font-size: 0.75em;
+		font-weight: normal;		
+	}
+  
+/* -----------------------------------------------------------
+		LINK 
+-------------------------------------------------------------- */
+a:link {
+	color: blue;
+	cursor: pointer;
+}
+a:visited { color: blue; }
+a:active { color: red; }
+   
+/*------------------------------------------------------------- 
+      T A B L E                                                                       
+--------------------------------------------------------------- */ 
+table {    
+	background-color:#ffffff;	 
+}
+	
+  table.funct_1 {
+		width: 100%;
+		background-image:url(../images/new_img/sfondo06.gif); 
+		background-repeat:repeat;
+		text-align:right;
+		border-width: 0px;		
+   }   
+	
+ 	table.riquadro {    
+		border-style: solid;
+		border-color:#0084d6;	/*#d6d6ce*/
+		border-width: 1px;	
+		width:100%;
+	}
+	
+	table.gif, div.gif {
+		margin-left: 0px;
+		margin-right: 0px;    	
+		width:100%;
+	}   
+
+	table.dinamica {
+		border-collapse: collapse;	
+		width:97%;
+	}
+   
+	td.intestazione {
+		border: 1px solid #606060;
+		border-width: 1px 1px 1px 1px;
+		border-collapse: collapse;
+		background-color: #E4E4E4;			
+		padding: 0px 0px 0px 1px;
+		margin:  0px 0px 0px 0px;
+		text-align: center;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color: #606060;	
+		font-size: 0.8em;
+		font-weight: bold;		
+	}	
+	
+	td.dinamica {
+		border: 1px solid #606060;
+		border-width: 1px 1px 1px 1px;
+		border-collapse: collapse;	
+		text-align: left;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 	
+		color: #000000;
+		font-size: 0.75em;
+		padding: 0px 0px 0px 1px;
+		margin:  0px 0px 0px 0px;	
+	}
+   
+	th.riquadro {
+		border-style: solid solid solid solid;
+		border-color:#000066;
+		border-width: 1px;		
+		padding: 0px 0px 0px 0px;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 	
+		color: #606060;
+		font-size: 0.8em;
+		font-weight: bold;			
+	}
+	
+	td.riquadro {   
+		border-style: solid solid solid solid;
+		border-color:#000066;
+		border-width: 1px;			
+		padding: 0px 0px 0px 0px;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 	
+		color: #606060;
+		font-size: 0.8em;
+		font-weight: bold;	
+	}	   
+      
+	td.scala_LT {
+	   border-style:solid;
+	   border-color: #000000;   
+	   border-width: 1px 1px 1px 1px;        
+	} 
+	td.scala_CT {
+	   border-style:solid;
+	   border-color: #000000;   
+	   border-width: 1px 1px 1px 0px;      
+	}  
+	td.scala_RT {
+	   border-style:solid;
+	   border-color: #000000;   
+	   border-width: 1px 1px 1px 0px;      
+	}
+	td.scala_LB {
+	   border-style:solid;
+	   border-color: #000000;   
+	   border-width: 0px 1px 1px 1px;      
+	} 
+	td.scala_CB {
+	   border-style:solid;
+	   border-color: #000000;   
+	   border-width: 0px 1px 1px 0px;      
+	}  
+	td.scala_RB {
+	   border-style:solid;
+	   border-color: #000000;   
+	   border-width: 0px 1px 1px 0px;      
+	}
+	td.white {
+	   border-color:#FFFFFF;
+	   border-style:solid;     
+	   border-width: 1px 1px 1px 0px;      
+   }
+   
+/*------------------------------------------------------- 
+      GENERICI                                                                         
+--------------------------------------------------------- */ 
+   .marg_top0 {
+     margin-top: 0px;
+   }
+   .marg_top4 {
+     margin-top: 4px;
+   }
+   .marg_top5 {
+     margin-top: 5px;
+   }
+   .marg_top7 {
+     margin-top: 7px;
+   }      
+   .marg_rgt0 {
+     margin-right: 0px;  
+   }   
+   .marg_rgt5 {
+     margin-right: 5px;  
+   }   
+   .marg_rgt8 {
+     margin-right: 8px;  
+   }
+   .marg_btm5 {
+     margin-bottom: 5px;  
+   }
+   .marg_lft4 {
+     margin-left: 4px;
+   }
+   .marg_lft8 {
+     margin-left: 8px;
+   }
+	 .marg_lft0 {
+     margin-left: 0px;
+   }
+   
+	.w_1{width:1em;} .w_2{width:2em;} .w_3{width:3em;} .w_4{width:4em;} .w_5{width:5em;}
+	.w_6{width:6em;} .w_6_5{width:6.5em;} .w_7{width:7em;} .w_7_5{width:7.5em;} .w_8{width:8em;} .w_8_5{width:8.5em;}
+	.w_9{width:9em;} .w_10{width:10em;} 
+	.w_11{width:11em;} .w_12{width:12em;} .w_13{width:13em;} .w_14{width:14em;} .w_15{width:15em;}
+	.w_16{width:16em;} .w_16_5{width:16.5em;} .w_17{width:17em;} .w_17_5{width:17.5em;} .w_18{width:18em;} 
+	.w_19{width:19em;} .w_19_5{width:19.5em;} .w_20{width:20em;}
+	.w_21{width:21em;} .w_22{width:22em;} .w_23{width:23em;} .w_24{width:24em;} .w_25{width:25em;}
+	.w_26{width:26em;} .w_27{width:27em;} .w_28{width:28em;} .w_29{width:29em;} .w_30{width:30em;}
+	.w_31{width:31em;} .w_32{width:32em;} .w_33{width:33em;} .w_34{width:34em;} .w_35{width:35em;}
+	.w_36{width:36em;} .w_37{width:37em;} .w_38{width:38em;} .w_39{width:39em;} .w_40{width:40em;}
+	.w_50{width:50em;}
+   
+   .w_9p{width:12%;}
+   .w_10p{width:15%;}
+   .w_26p{width:26%;}
+   .w_40p{width:40%;}
+   
+   .w_100p{width:100%;}
+   .w_26p input , .w_26p select{ width: 150px; }
+   .labelX input, .labelY input {width: 50px;  }
+   /*.listaComuni { width:85%;}*/
+   
+   .font8{
+      font-size:0.75em;
+   }
+
+/*-------------------------------------------------------------
+      I N P U T                                                                      
+----------------------------------------------------------- */ 
+  .testo {
+		background-color: #F5F5F5;   
+		border: 0px;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 	
+		color: #000000;
+		font-size: 0.75em;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 100%;
+  }
+  .testo2 {
+		background-color: #F5F5F5;   
+		border: 0px;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 	
+		color: #000000;
+		font-size: 0.75em;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+  }
+ 
+/*-----------------------------------------------------------
+     Grafica riquardi                                               
+------------------------------------------------------------- */
+	form {
+		display: inline;
+	}
+	
+	div.riquadro_left {
+		background-color:white;
+		margin: 5px 4px 5px 4px;
+		width: 98px;
+		/*
+		margin: 5px 4px 5px 4px;
+		width: 86px;
+		*/
+		
+	}
+
+	div.riquadro_right {
+		background-color:white;
+		margin-left: 4px;
+		margin-top: 0px;
+		width:98%;
+		margin-bottom: 0.5em;
+	}
+	
+	div.riquadro_textframe {
+		border-style: solid;
+		border-color: #30608F;
+		border-width: 1px;
+		margin-left: 5px;
+		margin-right: 3px;
+		padding-top: 3px;
+		background-color:white;
+		width:98%;
+	}
+
+	div.posizionamento {
+    	width: 100%;
+		overflow: auto;
+		/*padding-left: 4px;*/
+		text-align: center;
+		height: 110px;
+	}
+
+	div#div_toc {
+		width: 100%;
+		overflow: auto;
+		padding-left: 0px;
+		padding-top: 2px;
+	}
+	
+	table.inquadro {
+		background-color:#FFFFFF;
+		border-style: solid;
+		border-color: #30608F;
+		border-width: 1px;
+		margin-left: 8.5px;
+		margin-top: 5px;
+		width:95%;
+	}
+
+	table.measure {
+	  margin-left:6px;
+	  margin-top: 6px;
+	  font-family: Arial, Helvetica, sans-serif;
+	  font-weight: bold;
+	  font-size: 0.75em;
+	  background-image:url(../images/semitrasp_b.gif); 
+	}
+
+	input.measure {
+	  border: 1px dashed black;
+	  font-family: Verdana, Arial, Helvetica, sans-serif;
+	  font-weight: normal;
+	  font-size: 0.75em;
+	  margin-left: 5px;
+	  margin-right: 10px;
+	  padding-right: 3px;
+	  text-align: right;
+	  background: none;
+	}
+
+  div.legenda {
+    margin-left: 10px;
+	  overflow: auto;
+	  padding-bottom: 10px;
+  }
+
+
+/*------------------------------------------------------------- 
+      T O C                                                                          
+--------------------------------------------------------------- */ 
+	.divtoc {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 4px;
+		margin-right: 0px;
+		padding-top: 1px;
+		padding-bottom: 1px;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+
+	.grp {
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size: 0.7em;
+		font-style: normal;
+		font-weight: bold;
+		color: #000000;
+		text-align:left;
+		white-space: nowrap;
+		vertical-align: middle;
+	}
+
+	.lay {
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size: 0.7em;
+		font-style: normal;
+		font-weight: normal;
+		color: #000000;
+		text-align:left;
+		white-space: nowrap;
+		vertical-align: middle;
+	}
+	
+	img.imgToc {
+	  width: 20px;
+	  height: 14px;
+	  border: 1px;
+	}
+
+	.tocDivGrp{
+		padding-left: 20px;
+	}
+		
+/*------------------------------------------------------------------- 
+      SELECT
+--------------------------------------------------------------------- */
+select.w_5 {width: 5em;}
+select.w_10 {width: 10em;}
+select.w_15{width: 15em;}
+select.w_20{width: 20em;}	
+select.w_22{width: 22em;}
+   
+  /*-------------------------------------------------------------------------------------*/ 
+  /*      Q U E R Y                                                                      */
+  /*-------------------------------------------------------------------------------------*/
+  .frmselect {
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		/* occorre 1 px rispetto all'input*/
+		font-size: 0.8em;
+		width:95%;
+		margin: 5px 5px 5px 5px;
+	}
+
+  .btn {
+		cursor: pointer; color: black; background-color: #D6D6CE; border:1px solid gray;
+		font-weight: bold; font-size: 0.75em;
+		margin:0px; padding: 0.2em 0.5em 0.2em 0.5em;
+		text-align: center; vertical-align: middle;
+	}
+	
+	.btn1 {
+		cursor: pointer; color: black; background-color: #D6D3CE; border:1px solid gray;
+		font-weight: bold; font-size:0.75em;
+		text-align:center; vertical-align:middle;;	
+	}
+	
+	.btnPreferiti{
+		cursor: pointer; color: #000040; background-color: #F0F0F0; border:0px solid #0084d6;
+		width:5.0em; font-weight: normal; font-size:0.75em;		
+		float:right; display:inline; margin:0px 2px 0px 0px; padding:0px 0px 0px 0px;		
+		text-align: center; vertical-align: text-top;		
+	}
+	.btnLegenda {
+		cursor: pointer; color: #000040; background-color: #F0F0F0; border:0px solid #0084d6;
+		width: 5.0em; font-weight: normal; font-size:0.75em;		
+		/*margin-left:10px;*/
+		float:right; margin:0px 2px 0px 0px; display:inline; padding:0px 0px 0px 0px;
+		text-align: center; vertical-align: text-top;		
+	}
+
+	.btn2 {
+		cursor: pointer; color: black; background-color: #D6D3CE; border:1px solid gray;
+		font-weight: bold; font-size: 0.75em;
+		width:4em;
+		margin:1px;		
+		text-align:center; vertical-align:middle;
+	}
+
+	.btn3 {
+		cursor: pointer; color: black; background-color: #D6D3CE; border:1px solid gray;
+		font-weight: bold; font-size: 0.75em;
+		width:9em;
+		text-align:center; vertical-align:middle;
+		margin:0px;
+	}
+	
+	.btn3Help {
+		cursor: pointer;
+		color: black;	
+		background-color: #D6D3CE;
+		border:1px solid gray;
+		font-weight: bold;
+		font-size: 0.75em;
+		width:9em;
+		margin:1px;			
+		text-align:center;
+		vertical-align:middle;
+		margin:0px 0px 6px 0px;	
+	}	
+	
+	.btn3_5 {
+		cursor: pointer;
+		color: black;
+		background-color: #D6D3CE;
+		border:1px solid gray;
+		font-weight: bold;
+		font-size: 0.75em;
+		width:11em;
+		margin:1px;			
+		text-align:center;
+		vertical-align:middle;
+		margin:0px 0px 6px 0px;
+	}	
+
+	.btn4 {
+		cursor: pointer;
+		color: black;
+		background-color: #D6D3CE;
+		border:1px solid gray;
+		font-weight: bold;
+		font-size: 0.75em;
+		width:13em;
+		margin:0px 0px 6px 8px;
+		text-align:center;
+		vertical-align:middle;
+	}
+
+	.btn5 {
+		cursor: pointer;
+		color: black;
+		background-color: #D6D3CE;
+		border:1px solid gray;
+		font-weight: bold;
+		font-size: 0.8em;
+		width:15em;
+		margin:0px 0px 6px 8px;
+		text-align:center;
+		vertical-align:middle;
+	}
+
+	.btn6 {
+		cursor: pointer;
+		color: black;
+		background-color: #D6D3CE;
+		border:1px solid gray;
+		font-weight: bold;
+		font-size: 0.75em;
+		width:19.5em;
+		margin:0px 0px 6px 8px;
+		text-align:center;
+		vertical-align:middle;
+	}
+
+
+	.btnInterroga {
+		cursor: pointer;
+		color: black;	
+		background-color: #D6D3CE;
+		border:1px solid gray;
+		font-weight: bold;
+		font-size: 0.75em;
+		width:13em;
+		margin:0px 0px 3px 8px;
+		text-align:center;
+		vertical-align:middle;
+	}
+	
+	.btnInterroga2 {
+		cursor: pointer;
+		color: black;	
+		background-color: #D6D3CE;
+		border:1px solid gray;
+		font-weight: bold;
+		font-size: 0.8em;
+		width:15em;
+		margin:0px 0px 3px 8px;
+		text-align:center;
+		vertical-align:middle;
+	}
+	
+	.btnInterroga3 {
+		cursor: pointer;
+		color: black;	
+		background-color: #D6D3CE;
+		border:1px solid gray;
+		font-weight: bold;
+		font-size: 0.75em;
+		width:19.5em;
+		margin:0px 0px 3px 8px;
+		text-align:center;
+		vertical-align:middle;
+	}
+						
+	table.campi_liv {
+		border-collapse: collapse;
+		border-style: solid;		
+		border-color:#666666;		
+		border-width: 1px 1px 1px 1px;		
+	}
+	
+	th.livello {	    
+		border-style: solid;
+		background-color:#ECECEC;		
+		border-color:#666666;
+		border-width: 1px 1px 1px 1px;		
+		text-align: center;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color: #606060;
+		font-size: 0.8em;
+		font-weight: bold;	
+	}
+	
+	td.livelli {
+		border-style: dotted solid dotted solid;
+		border-color:#666666;
+		border-width: 0px 1px 1px 1px;		
+		padding: 0px 0px 0px 4px;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		color: #606060;
+		font-size: 0.8em;
+		font-weight: bold;
+	}			
+			
+  textarea {	 
+	 font-family: Verdana, Arial, Helvetica, sans-serif;    	 
+  } 			
+
+/*-------------------------------------------------------------------------------------*/ 
+/*      DIV PER LA TABELLA DINAMICA                                                    */
+/*-------------------------------------------------------------------------------------*/			
+  div.tabella {
+		overflow:auto;
+		height: 121px;
+		margin:0px;
+		padding:0px;
+	}
+  
+  .ban {
+		text-align:center;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		font-size: 0.85em;
+		font-style:normal;
+		background-color:#004E85;
+		color:#ffffff;
+		border-style: solid;
+		border-color:#0084d6;
+		border-width: 1px;
+		margin:10px 5px 5px 5px;
+	}	
+
+  .ban a{
+		text-align:center;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		font-size: 0.85em;
+		font-style:normal;
+		background-color:#265E81;
+		color:#ffffff;
+	}
+  
+	.ban a:visited { color:#ffffff; }
+	.ban a:hover{
+		text-align:center;
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		font-size: 0.85em;
+		font-style:normal;
+		background-color:#265E81;
+		color:#c7f780;
+	}
+  
+  .sfondo {
+		background-color:#002B57;
+	}
+	
+	/* tooltip */
+	.ttip {
+		position: absolute;
+		z-index: 100;
+		background-color: #FFDD00;
+		color: red;
+		border: 1px solid red;
+		padding: 3px;
+		font-size: 0.7em;
+		font-style: italic;
+	}
+	
+	/* form Selezione incrociata su più livelli */
+	textarea {
+		font-family: Verdana, Arial, Helvetica, sans-serif; 
+		font-size: 0.8em;
+		font-style: normal;
+	}
+	
+	
+div.creazioneStampa {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: Verdana, Arial, Helvetica, sans-serif;	
+  color: #FFF;
+  position: absolute;
+  height: 3em;
+  top: 50%;
+  margin-top: -1.5em;
+  width: 100%;
+}
+
+
+div.riquadro_toponimi {
+  margin:0em;
+  padding:0em;
+  clear:both;
+}
+
+div.div_toponimi {
+	overflow: auto;
+	height: 13em;
+}
+
+table.toponimi {
+
+    border-collapse: collapse;
+	margin-left: 0.5em;
+	margin-bottom: 0.5em;
+	width:98%;
+}
+
+table.toponimi td {
+   color: #002B57;
+}
+
+table.toponimi a, table.toponimi a:active , table.toponimi a:link, table.toponimi a:visited{
+   color: #002B57;
+   text-decoration:underline;
+}
+
+table.toponimi a:hover{
+   color: #002B57;
+   background-color: #FFFF00;
+   text-decoration:underline;
+}
+
+
+div.container_toponimi {
+    /*overflow: auto;*/
+	/*height: 13em;*/
+	margin: 0em;
+	padding: 0em;
+	margin-top: -1px;
+	padding-right: 5px;
+	width: 99%;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ------------------------------------------------------------
+		Ultime modifiche giugno 2010
+--------------------------------------------------------------- */
+.block {display:block;}
+.inline {display:inline;}
+
+/* ------------- intestazione ----------------*/
+.header {}
+table.intestazione {
+	width: 100%;
+	background-image:url(../images/new_img/sfondo06.gif);
+	background-repeat:repeat;
+}
+.logo {width: 220px; padding-left: 0.2em;}
+.logoErmes {width: 165px; text-align: center;}
+.help {width: 80px; text-align: center;}
+img.img_home {border: 1px solid #0084d6;}
+h2{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color:#fff;	 
+	font-weight: bold;
+	font-size:0.8em;
+	vertical-align:top;
+	/*da usare per spostare sù e giù la scritta rispetto alla .gif*/
+	margin: 0em;
+	padding: 0.3em 0em 0.2em 0.2em;
+}
+h1.titolo1{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFF;
+	/*font-weight: bold;*/
+	font-size: 1.3em;	
+	/*text-align:center;*/
+	margin:0em;
+	padding: 0.3em 0em 0.2em 0.2em;
+}
+h1.titolo2{
+	font-size: 1.5em;
+	color: #FFF;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	text-align:center;
+	margin:0em;
+	padding:0em;
+}
+h1.titolo3{
+	font-size: 1em;
+	color: #FFF;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	text-align:center;
+	margin:0em;
+	padding:0em;
+}
+h1.preferiti, h1.legenda{display:inline;}
+
+
+/* ------------- CREDITS ----------------*/
+.credits_head{float: left; margin: 0em 0em 1em 0em;}
+.credits{clear: both;}
+.credits_tit{text-indent:20px; color:#cc6633;}
+table.riquadrocr {border-style: solid; border-color: #002B57; border-width: 1px; width:98%;}
+.credits_td{color: white; font-weight: bold; padding:0.2em;}
+.credits_nome{text-indent:60px; color:#265E81;}
+.credits_ruolo{text-indent:60px; color:#265E81; font-style:italic;}
+.logo_semenda{text-align:center; margin-top:5px;}
+
+/* ------------- contenitore per document.write ----------*/
+#bodyContent{margin:0; padding:0;}
+
+/* -------------------------------------------------------*/
+.ridisegno, .ridisegno span, .ridisegno input {margin: 4px 0px 4px 4px; vertical-align: middle;}
+
+/* ------------- Posizionamento su griglia ---------------*/
+.label_ricGriglia{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color:#002B57;
+	font-size: 0.8em;
+	font-weight: bold;		
+	text-align: right;
+	padding-left:0.5em;
+}
+.sel_ricGriglia{
+	margin-top:0.2em;
+}
+input.button{
+	margin-top: 0.2em;
+	margin-left: 0.7em;
+	margin-bottom: 0.2em;
+	margin-right: 0.7em;
+	font-family: Arial, sans-serif, Verdana, Arial, Helvetica;
+	font-size: 0.75em;
+	font-weight: normal;
+}
+input.button_s {
+	margin:0px;
+	font-family: Arial, sans-serif, Verdana, Arial, Helvetica;
+	font-size: 0.75em;
+	font-weight: normal;
+
+}
+
+div.button{
+	padding-top: 0.5em; 
+	padding-bottom: 0.3em;
+}
+
+/* ------------- Posizionamento su provincia e comune ----------------*/
+.label_ricProvCom{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color:#002B57;
+	font-size: 0.8em;
+	font-weight: bold;		
+	text-align: left;
+	padding: 0.7em 0.2em 0.7em 0.5em;
+}
+.btnRicProvCom{
+	margin: 0.1em 0.25em 0.1em 0.25em;
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+	font-family: Arial, sans-serif, Verdana, Arial, Helvetica; font-size: 0.75em; font-weight: normal;
+}
+.btnRicCom{
+	margin: 0.1em 0.25em 0.1em 0.25em;
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+	font-family: Arial, sans-serif, Verdana, Arial, Helvetica; font-size: 0.75em; font-weight: normal;
+}
+/* ------------- toolbar ----------------*/
+div.tools{
+	text-align:center;
+	padding: 2px;
+}
+div.tools a {
+	color:#ffffff;
+	text-decoration: none;
+}
+div.tools a:link {
+	color:#ffffff;
+	text-decoration: none;
+}
+div.tools a:visited {
+	color:#ffffff;
+	text-decoration: none;
+}
+
+/* ------------- scala ----------------*/
+div.scala{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #000000;
+	font-size: 0.75em;
+	padding: 3px 0px 3px 1px;
+}
+input#in_scala{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #000000;
+	font-size: 0.9em;
+}
+select#sel_scala{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #000000;
+	font-size: 0.9em;
+	width: 95%;
+}
+
+
+/* ----------- OVERVIEW MAP ------------------*/
+#ovImage {border: 0px solid #0084d6;}
+
+
+/* ------------- Form di stampa ----------------*/
+table.stampa {
+	color: #606060;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+.label_stampa{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color:#002B57;
+	font-size: 0.8em;
+	font-weight: bold;		
+	text-align: center;
+}
+
+span.scalalegenda{
+	font-size: 0.8em;
+	color:#000000;
+}
+
+/* ------------- toc autoupdate ----------------*/
+.autoupdate {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.7em;
+	color: #000000;
+	text-align:left;
+	vertical-align: middle;
+	margin-left:0.5em;
+}
+
+/* ------------- identify ----------------*/
+div.dati_identify {
+	background-color: #FFFFFF;
+	margin:0em;
+	padding-left: 1.5em;
+	padding-top: 0.8em;
+}
+table.dati {
+	color:#002B57;
+	width: 34em;
+}
+	/* td sx, contenitore elenco layer e record trovati*/
+	td.identify_cell {vertical-align: top; padding-left: 0.5em;}
+	td.identify_lista_record {
+		border-top: 1px solid #30608F;
+		border-right: 0em;
+		border-bottom: 1px solid #30608F;
+		border-left: 1px solid #30608F;
+		width: 10em;
+	}
+	/* elenco layer e record trovati */
+	div.non_selected_record {}
+	div.intest_record {
+	    font-size: 1em;
+		color: #30608F;
+		text-align: center;
+		padding-bottom: 0.5em;
+		padding-top: 0.5em;
+		width: 8em;
+	}
+	div.record {
+	    text-align: left;
+		border: none;
+		cursor: pointer; 
+		padding: 0.3em;
+		font-size: 0.75em;
+		margin-left: 1em;
+	}
+	div.selected_record {
+		border-top: 1px solid #30608F;
+		border-right: 0em;
+		border-bottom: 1px solid #30608F;
+		border-left: 1px solid #30608F;
+		background-color:#F5F5F5;
+	}
+	/* dati/valori del record */
+	td#cell_valori{
+		background-color:#F5F5F5;
+		border-top: 1px solid #30608F;
+		border-right: 1px solid #30608F;
+		border-bottom: 1px solid #30608F;
+		border-left: 0em;
+	}
+	table.valori_identify{background-color: #F5F5F5;}
+	td.label {
+	    height: 2em;
+	    color: #000000;
+		font-size: 0.75em;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+	td.valori {
+	    height: 1em;
+		color:#002B57;
+		font-size: 0.75em;
+		font-weight: bold;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	td.cella_pari {background-color: #F5F5F5;}
+	td.cella_dispari {background-color: white;}
+	/* allega documenti*/
+	input#allega_doc {margin-top: 2em;}
+
+/* ------------- Upload documenti ----------------*/
+.label_uploadDoc{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color:#002B57;
+	font-size: 0.8em;
+	font-weight: bold;		
+	text-align: right;
+	padding: 0.7em 0.2em 0.7em 2em;
+}
+input.campo_testo{width: 70%;}
+div.errore{font-weight: bold; color:yellow; font-size: 0.9em;}
+span.errore{color:yellow; font-size: 100%;}
+div.esito{
+	border-color:#002B57;
+	border-style: solid;
+	border-width: 1px;
+	color:#FFF;
+	font-weight: bold;
+	font-size: 1.2em;
+	width: 15em;
+	height: 3em;	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -1.5em;
+	margin-left: -7.5em;
+	padding-top: 1em;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+fieldset#allega_documento {padding-top: 0.5em;}
+
+/* ------------- Form generico ----------------*/
+fieldset {
+	border-color: #fff;
+	margin:0.2em 0.5em 0.5em 0.5em;
+	padding:0.5em 0.2em 0em 0.5em;
+}
+fieldset legend {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #fff;
+	font-weight: normal;
+	font-size:0.8em;
+}
+
+form.modulo {}
+div.div_riga {clear:both;}
+div.div_label {
+	/* usati per allineare etichette e campi*/
+	float:left;
+	/* non imposto la width che è diversa in form diversi */
+		/*width:16%;*/
+		/*width:7.5em;*/
+	/* la distanza di 1 em è consigliata, obblibatoria tra i bottoni dei moduli */
+	margin-bottom:1em;
+	margin-right:0.3em;
+	text-align:left;
+}
+div.div_label label , div.div_label_2 label {width: 100%; display: inline; font-size: 0.8em;}
+div.obbligatorio{font-weight:bold;}
+div.div_campo{float:left; margin-bottom:1em; margin-right:0.0em;}
+div.div_campo2{width:30%; float:left; margin-bottom:1em; margin-right:0.0em;}
+form.modulo input, form.modulo select, form.modulo textarea {font-size: 0.8em;}
+form.modulo .controllo {}
+
+/* ------------- tabella di dati / risultati -----------------------------*/
+table.risultati{
+	border-collapse: collapse;
+	margin-left: 0.5em;
+	width:98%;
+}
+table caption {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color:#fff;	 
+	font-weight: bold;
+	font-size:0.8em;
+	margin:0.5em 0em 0.5em 0em;	
+	text-align: left;
+}
+th {
+	border: 1px solid #002B57;
+	border-width: 1px 1px 1px 1px;
+	border-collapse: collapse;
+	background-color: #F5F5F5;			
+	padding: 0em 0.2em 0em 0.2em;
+	margin: 0em;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #002B57;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+td.dati {
+	border: 1px solid #606060;
+	border-collapse: collapse;	
+	text-align: left;
+	font-size: 0.75em;
+	padding: 0em 0.2em 0em 0.2em;
+	margin: 0em;
+}
+td.centrata{text-align:center;}
+td.sx{text-align:left;}
+td.dx{text-align:right;}
+td.vip{font-weight:bold;}
+
+td.datilegenda {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-align: left;
+	font-size: 0.7em;
+	font-style: normal;
+	font-weight: normal;
+	padding-left: 0.2em;
+	margin: 0em;
+	width:90%;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+/* -------------  elenchi puntati ------------- */
+ul {margin-top: 0em; margin-bottom: 0.5em;}	
+li {font-family: Verdana, Arial, Helvetica, sans-serif;  font-size: 0.8em; font-style: normal;}
+
+/* -------------  MAP FRAME ------------- */
+div.mapFrame{position:absolute; overflow:hidden;}
+div.visible{visibility: visible;}
+div.notvisible{visibility: hidden;}
+div.ovShadow1{left:0px; top:0px; width:1px; height:1px;}
+div.ovShadow2{left:-10px; top:-10px; width:1px; height:1px;}
+div.ovLayer{left:-10px; top:-10px; width:1px; height:1px;}
+div.zoomOV{left:-100px; top:-10px; width:1px; height:1px; background-color:#ff0000;}
+div.zoomBox{left:0px; top:0px; background-color:#ff0000;}
+div.navigator{vertical-align: middle; text-align: center;}
+img.navigator{vertical-align: middle;}
+div#navigator_panWest{left:5px; top:20px; width:23px; height:22px;}
+div#navigator_panNorth{left:20px; top:5px; width:22px; height:23px;}
+div#navigator_panEast{left:34px; top:20px; width:23px; height:22px;}
+div#navigator_panSouth{left:20px; top:35px; width:22px; height:23px;}
+div#navigator_zoomPlus{left:21px; top:59px; width:20px; height:21px;}
+div#navigator_zoomMinus{left:21px; top:77px; width:20px; height:21px;}
+div#measureBox{left:0px; top:0px; width:650px; height:50px;}
+
+/* -------------  risultato interrogazione multipla ------------- */
+body.intMul {cursor: wait;}
+.div_print {position:absolute; top:23px; right:38px; cursor:pointer;}
+.div_pdf {position:absolute; top:29px; right:18px; cursor:pointer; }
+.risultato{margin-top:1em; margin-bottom:1em;}
+th.zoom{width: 26px;}
+th.rec{width: 2em;}
+
+/* -------------  legenda dinamica ------------- */
+.legendaDinamica{margin-top: 1em; margin-bottom: 1em;}
+
+/* -------------  skiplink ------------- */
+.skip{position:absolute; left:0px; top:-500px; width:1px; height:1px; overflow:hidden;}
+
+/* -------------  pagina index ------------- */
+.bodyIndx {
+	background-image:url(../images/new_img/sfondo_indx.gif); 
+	background-repeat:repeat;
+	margin:0em;
+	padding:0em;
+}
+table.elencositi{
+	border-collapse: collapse;
+	margin-top:1em;
+	margin-left: 1em;
+	width:80%;
+}
+
+/* ------------------------------------------------------- */
+input.disabled {
+  	opacity: 0.5;  /* Firefox, Safari(WebKit), Opera */
+	-ms-filter: "alpha(opacity=50)";/* IE 8 */
+	/*filter: alpha(opacity=50);*/       /* IE 4-7 */
+}
+
+span.disabled, label.disabled {
+	color: #525252;
+}
+
+
+/* ------------------------------------------------------- */
+/* AGGIUNTE GEOLOGICO */
+.div_search {
+	width: 65%;
+	text-align: left;
+	float: left;
+}
+.div_search_big {
+	width: 74%;
+	text-align: left;
+	float: left;
+}
+.div_search_pulisci {
+	width: 12%;
+	text-align: left;
+	float: left;
+}
+.div_search_pulisci_small {
+	width: 12%;
+	text-align: left;
+	float: left;
+	margin-left:-4%;
+}
+div.riquadrocr {
+	clear: both;
+}
+h1.hidden {
+	display:none;
+}
+
+
+.opacityOn { 
+  /* for IE */
+  filter:alpha(opacity=30);
+  /* CSS3 standard */
+  opacity:0.3;
+}
+.opacityOff {   
+	/* for IE */
+  filter:alpha(opacity=100);
+  /* CSS3 standard */
+  opacity:1;
+}

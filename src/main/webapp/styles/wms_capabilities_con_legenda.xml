@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd">
+<?xml-stylesheet type="text/xsl" href="wms_capabilities_html.xsl"?> 
+<WMT_MS_Capabilities version="1.1.1">
+<Service>
+  <Name>OGC:WMS</Name> 
+  <Title>Web Map Service ewater_en</Title> 
+  <Abstract>ArcIMS 9.2.0 ewater_en Web Map Service</Abstract> 
+<KeywordList>
+  <Keyword>ArcIMS</Keyword> 
+  </KeywordList>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://geo.regione.emilia-romagna.it/wmsconnector/com.esri.wms.Esrimap/ewater_en?" xlink:type="simple" /> 
+<ContactInformation>
+<ContactPersonPrimary>
+  <ContactPerson /> 
+  <ContactOrganization /> 
+  </ContactPersonPrimary>
+  <ContactPosition /> 
+<ContactAddress>
+  <AddressType>postal</AddressType> 
+  <Address /> 
+  <City /> 
+  <StateOrProvince /> 
+  <PostCode /> 
+  <Country /> 
+  </ContactAddress>
+  <ContactVoiceTelephone /> 
+  <ContactFacsimileTelephone /> 
+  <ContactElectronicMailAddress /> 
+  </ContactInformation>
+  <Fees>none</Fees> 
+  <AccessConstraints>none</AccessConstraints> 
+  </Service>
+<Capability>
+<Request>
+<GetCapabilities>
+  <Format>application/vnd.ogc.wms_xml</Format> 
+<DCPType>
+<HTTP>
+<Get>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://geo.regione.emilia-romagna.it/wmsconnector/com.esri.wms.Esrimap/ewater_en?" xlink:type="simple" /> 
+  </Get>
+  </HTTP>
+  </DCPType>
+  </GetCapabilities>
+<GetMap>
+  <Format>image/png</Format> 
+  <Format>image/jpeg</Format> 
+  <Format>image/gif</Format> 
+<DCPType>
+<HTTP>
+<Get>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://geo.regione.emilia-romagna.it/wmsconnector/com.esri.wms.Esrimap/ewater_en?" xlink:type="simple" /> 
+  </Get>
+  </HTTP>
+  </DCPType>
+  </GetMap>
+<GetFeatureInfo>
+  <Format>application/vnd.ogc.wms_xml</Format> 
+  <Format>text/xml</Format> 
+  <Format>text/html</Format> 
+  <Format>text/plain</Format> 
+<DCPType>
+<HTTP>
+<Get>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://geo.regione.emilia-romagna.it/wmsconnector/com.esri.wms.Esrimap/ewater_en?" xlink:type="simple" /> 
+  </Get>
+  </HTTP>
+  </DCPType>
+  </GetFeatureInfo>
+  </Request>
+<Exception>
+  <Format>application/vnd.ogc.se_xml</Format> 
+  <Format>application/vnd.ogc.se_inimage</Format> 
+  <Format>application/vnd.ogc.se_blank</Format> 
+  </Exception>
+  <UserDefinedSymbolization RemoteWFS="0" UserStyle="1" UserLayer="0" SupportSLD="1" /> 
+<Layer queryable="0" opaque="0" noSubsets="0">
+  <Title>ewater_en</Title> 
+  <SRS>EPSG:4326</SRS> 
+  <SRS>EPSG:32632</SRS> 
+  <SRS>EPSG:4267</SRS> 
+  <SRS>EPSG:4269</SRS> 
+  <LatLonBoundingBox minx="9.1781510633" miny="43.7849257783" maxx="13.0561630925" maxy="45.2266809573" /> 
+  <BoundingBox SRS="EPSG:32632" minx="514318.195954319" miny="4855619.82335981" maxx="818824.837419612" maxy="5008148.46141574" /> 
+<Layer queryable="1" opaque="0" noSubsets="0">
+  <Name>6</Name> 
+  <Title>Administration limits of Emilia Romagna Region (Italy)</Title> 
+  <SRS>EPSG:4326</SRS> 
+  <LatLonBoundingBox minx="9.1951154902" miny="43.7201516878" maxx="12.8284358058" maxy="45.1425623591" /> 
+<Style>
+  <Name>6</Name> 
+  <Title>Administration limits of Emilia Romagna Region (Italy)</Title> 
+<LegendURL>
+  <Format>image/jpeg</Format> 
+  <OnlineResource xlink:href="http://geo.regione.emilia-romagna.it/documenti/eWater/legende/isopache/comuni.jpg" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" /> 
+  </LegendURL>
+  </Style>
+  </Layer>
+<Layer queryable="1" opaque="0" noSubsets="0">
+  <Name>5</Name> 
+  <Title>ISO_GRA_SAN</Title> 
+  <SRS>EPSG:4326</SRS> 
+  <LatLonBoundingBox minx="9.3497255009" miny="43.851306313" maxx="12.8750427998" maxy="45.1620576899" /> 
+<Style>
+  <Name>5</Name> 
+  <Title>ISO_GRA_SAN</Title> 
+<LegendURL>
+  <Format>image/jpeg</Format> 
+  <OnlineResource xlink:href="http://geo.regione.emilia-romagna.it/documenti/eWater/legende/isopache/iso_gra_san.jpg" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" /> 
+  </LegendURL>
+  </Style>
+  </Layer>
+<Layer queryable="1" opaque="0" noSubsets="0">
+  <Name>4</Name> 
+  <Title>GROUND_WAT_BOD</Title> 
+  <SRS>EPSG:4326</SRS> 
+  <LatLonBoundingBox minx="9.3703361443" miny="43.8920177801" maxx="12.8268206386" maxy="45.1419978913" /> 
+<Style>
+  <Name>4</Name> 
+  <Title>GROUND_WAT_BOD</Title> 
+<LegendURL>
+  <Format>image/png</Format> 
+  <OnlineResource xlink:href="http://geo.regione.emilia-romagna.it/documenti/eWater/legende/gwb/legend_gwb_it.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" /> 
+  </LegendURL>
+  </Style>
+  </Layer>
+<Layer queryable="1" opaque="0" noSubsets="0">
+  <Name>3</Name> 
+  <Title>ALGCh_it</Title> 
+  <SRS>EPSG:4326</SRS> 
+  <LatLonBoundingBox minx="9.3703361443" miny="43.8920177801" maxx="12.8268206386" maxy="45.1419978913" /> 
+<Style>
+  <Name>3</Name> 
+  <Title>ALGCh_it</Title> 
+<LegendURL>
+  <Format>image/png</Format> 
+  <OnlineResource xlink:href="http://geo.regione.emilia-romagna.it/documenti/eWater/legende/hhl/legend_hhl_it.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" /> 
+  </LegendURL>
+  </Style>
+  </Layer>
+<Layer queryable="1" opaque="0" noSubsets="0">
+  <Name>2</Name> 
+  <Title>ALGCh_it</Title> 
+  <SRS>EPSG:4326</SRS> 
+  <LatLonBoundingBox minx="9.3703361443" miny="43.8920177801" maxx="12.8268206386" maxy="45.1419978913" /> 
+  </Layer>
+<Layer queryable="1" opaque="0" noSubsets="0">
+  <Name>1</Name> 
+  <Title>ALGCh_it</Title> 
+  <SRS>EPSG:4326</SRS> 
+  <LatLonBoundingBox minx="9.3703361443" miny="43.8920177801" maxx="12.8268206386" maxy="45.1419978913" /> 
+  </Layer>
+<Layer queryable="1" opaque="0" noSubsets="0">
+  <Name>0</Name> 
+  <Title>Hydrogeological well map of Emilia Romagna Region (Italy)</Title> 
+  <SRS>EPSG:4326</SRS> 
+  <LatLonBoundingBox minx="9.3729201288" miny="43.9284194235" maxx="12.8110130994" maxy="45.1112571124" /> 
+<Style>
+  <Name>0</Name> 
+  <Title>Hydrogeological well map of Emilia Romagna Region (Italy)</Title> 
+<LegendURL>
+  <Format>image/png</Format> 
+  <OnlineResource xlink:href="http://geo.regione.emilia-romagna.it/documenti/eWater/legende/mhp/legend_hmp_it.png" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" /> 
+  </LegendURL>
+  </Style>
+  <ScaleHint min="0.000000" max="200000.000000" /> 
+  </Layer>
+  </Layer>
+  </Capability>
+  </WMT_MS_Capabilities>

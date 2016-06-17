@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!--<parent>
+    <groupId>com.rer.sgss</groupId>
+    <artifactId>commonapp</artifactId>
+    <version>1.0</version>
+    <relativePath>../commonapp/pom.xml</relativePath>
+   </parent>-->
+  
+  <groupId>com.rer.sgss</groupId>
+  <artifactId>geocatalogo</artifactId>
+  <packaging>war</packaging>
+  <version>1.0.1-SNAPSHOT</version>
+  <name>Geocatalogo</name>
+  <description>Il Catalogo dei Dati Geografici consente la consultazione dei dati geografici 
+  del Servizio Geologico, Sismico e dei Suoli (SGSS).</description>
+  <url>https://redmine.ente.regione.emr.it/projects/geocatalogo</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<env.properties>prod</env.properties>
+  </properties>
+   
+  <dependencies>
+    <dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+    
+  <build>
+	<resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
+    <finalName>${project.artifactId}-${project.version}-${env.properties}</finalName>
+	<plugins>
+		<plugin>
+			<groupId>pl.project13.maven</groupId>
+			<artifactId>git-commit-id-plugin</artifactId>
+			<version>2.2.1</version>
+		   <!--
+				 Ensure that the revision goal is invoked during the initialize
+				 phase.
+			-->
+			<executions>
+				<execution>
+					<goals>
+						<goal>revision</goal>
+					</goals>
+				</execution>
+			</executions>
+			<configuration>
+				<!--
+					Configure the location of the .git directory.
+				-->
+				<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+			</configuration>
+		</plugin>
+	
+		<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.7</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <configuration>
+                        <target>
+                            <copy file="${project.build.directory}/${project.artifactId}-${project.version}-${env.properties}.war" tofile="/mnt/condivisa/jboss_deploy/${project.artifactId}-${project.version}-${env.properties}.war" overwrite="true"/>
+							<echo message="This is how this target is used! ${project.artifactId}-${project.version}-${env.properties}.war"/>
+                        </target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+		
+		<plugin>
+			<groupId>org.jboss.as.plugins</groupId>
+			<artifactId>jboss-as-maven-plugin</artifactId>
+			<version>7.7.Final</version>
+			<configuration>
+			<force>true</force>
+			<hostname>vm56lnx</hostname>
+			<port>9999</port>
+			<username>landini_m</username>
+			<domain>
+			  <server-groups>
+				<server-group>geologico-svil</server-group>
+			  </server-groups>
+			</domain>
+
+			</configuration>
+			<!--<executions>
+			  <execution>
+				<phase>install</phase>
+				<goals>
+				  <goal>deploy</goal>
+				</goals>
+			  </execution>
+			</executions>-->
+		  </plugin>
+    </plugins>
+	
+  </build>
+</project>

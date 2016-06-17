@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="http://dev.sencha.com/deploy/dev/resources/css/ext-all.css">
+<script type="text/javascript" src="http://dev.sencha.com/deploy/dev/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="http://dev.sencha.com/deploy/dev/ext-all.js"></script>
+<script type="text/javascript" >
+Ext.onReady(function(){
+	// shorthand
+	var Tree = Ext.tree;
+
+	var tree = new Tree.TreePanel({
+		el:'tree-div',
+        animate:true, 
+        autoScroll:true,
+		useArrows:true,
+		enableDD:true,
+		rootVisible: false,
+		containerScroll: true, 
+		border: false,
+		width: 250,
+		height: 300,
+		dropConfig: {appendOnly:true},
+		loader: new Tree.TreeLoader({
+			dataUrl:'json_tree.jsp'
+		})
+	});
+
+	// set the root node
+	var root = new Tree.AsyncTreeNode({
+		text: 'Ext JS',
+		draggable:false,
+		iconCls:'conthruAr',
+		id:'source'
+	});
+	tree.setRootNode(root);
+
+	// render the tree
+	tree.render();
+	root.expand();
+});
+
+
+
+
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<div id="tree-div" style="overflow:auto; height:300px;width:250px;border:1px solid #c3daf9;"></div>
+</body>
+</html>
+

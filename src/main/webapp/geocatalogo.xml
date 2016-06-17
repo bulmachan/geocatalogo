@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd">
+<WMT_MS_Capabilities version="1.1.1">
+  <Service>
+    <Name>WMS</Name>
+    <Title>Ctr5</Title>
+    <Abstract>Visualizzazione WMS della Carta Tecnica Regionale al 5.000</Abstract>
+    <KeywordList>
+      <Keyword/>
+    </KeywordList>
+    <OnlineResource
+      xlink:href="http://10.10.80.193/geologico/geocatalogo/getMap.jsp?"
+      xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>Servizio sviluppo dell’amministrazione digitale e sistemi informativi geografici</ContactPerson>
+        <ContactOrganization>Regione Emilia-Romagna</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>Centro Servizi Regionale per l'informazione geografica</ContactPosition>
+      <ContactAddress>
+        <AddressType>postal</AddressType>
+        <Address>Viale Aldo Moro, 52</Address>
+        <City>Bologna</City>
+        <StateOrProvince>Emilia Romagna</StateOrProvince>
+        <PostCode>40100</PostCode>
+        <Country>Italy</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone>+390515274483</ContactVoiceTelephone>
+      <ContactFacsimileTelephone>+390515274216</ContactFacsimileTelephone>
+      <ContactElectronicMailAddress>gisadmins@regione.emilia-romagna.it</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>none</Fees>
+    <AccessConstraints>none</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource
+                xlink:href="http://10.10.80.193/geologico/geocatalogo/getMap.jsp?"
+                xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/svg</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource
+                xlink:href="http://10.10.80.193/geologico/geocatalogo/getMap.jsp?"
+                xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource
+                xlink:href="http://10.10.80.193/geologico/geocatalogo/getMap.jsp?"
+                xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+    </Exception>
+    <Layer>
+      <Name>BASE_USER.BASE_VF_COMUNI_POL.polygon</Name>
+      <Title>BASE_USER.BASE_VF_COMUNI_POL.polygon</Title>
+      <Abstract>BASE_USER.BASE_VF_COMUNI_POL.polygon</Abstract>
+      <SRS>EPSG:4326</SRS>
+      <SRS>EPSG:25832</SRS>
+      <SRS>EPSG:202003</SRS>
+      <SRS>EPSG:202032</SRS>
+      <SRS>EPSG:4230</SRS>
+      <SRS>EPSG:23032</SRS>
+      <SRS>EPSG:23033</SRS>
+      <SRS>EPSG:4265</SRS>
+      <SRS>EPSG:3003</SRS>
+      <SRS>EPSG:3004</SRS>
+      <SRS>EPSG:32632</SRS>
+      <SRS>EPSG:32633</SRS>
+      <SRS>EPSG:4258</SRS>
+      <SRS>EPSG:25833</SRS>
+      <SRS>EPSG:3857</SRS>
+      <LatLonBoundingBox maxx="13.015085" maxy="45.21207"
+        minx="9.018668" miny="43.64099"/>
+      <BoundingBox SRS="EPSG:25832" maxx="802916.0" maxy="5001802.0"
+        minx="513918.0" miny="4845800.0"/>
+      <BoundingBox SRS="EPSG:202003" maxx="815364.8" maxy="1014557.6"
+        minx="501578.7" miny="832195.4"/>
+      <BoundingBox SRS="EPSG:202032" maxx="803000.0" maxy="1002000.0"
+        minx="514000.0" miny="846000.0"/>
+      <BoundingBox SRS="EPSG:4230" maxx="13.016034" maxy="45.212971"
+        minx="9.019674" miny="43.641999"/>
+      <BoundingBox SRS="EPSG:23032" maxx="803000.0" maxy="5002000.0"
+        minx="514000.0" miny="4846000.0"/>
+      <BoundingBox SRS="EPSG:23033" maxx="330957.0" maxy="5018498.0"
+        minx="31012.0" miny="4841563.0"/>
+      <BoundingBox SRS="EPSG:4265" maxx="13.015272" maxy="45.211415"
+        minx="9.018916" miny="43.640339"/>
+      <BoundingBox SRS="EPSG:3003" maxx="1802947.0" maxy="5001820.0"
+        minx="1513947.0" miny="4845820.0"/>
+      <BoundingBox SRS="EPSG:3004" maxx="2350891.0" maxy="5018322.0"
+        minx="2050946.0" miny="4841387.0"/>
+      <BoundingBox SRS="EPSG:32632" maxx="802916.0" maxy="5001802.0"
+        minx="513918.0" miny="4845800.0"/>
+      <BoundingBox SRS="EPSG:32633" maxx="330888.0" maxy="5018305.0"
+        minx="30944.0" miny="4841369.0"/>
+      <BoundingBox SRS="EPSG:4258" maxx="12.850398" maxy="45.169558"
+        minx="9.172921" miny="43.703388"/>
+      <BoundingBox SRS="EPSG:25833" maxx="330888.0" maxy="5018305.0"
+        minx="30944.0" miny="4841369.0"/>
+      <BoundingBox SRS="EPSG:3857" maxx="1430500.0" maxy="5648255.0"
+        minx="1021125.0" miny="5419655.0"/>
+    </Layer>
+  </Capability>
+</WMT_MS_Capabilities>

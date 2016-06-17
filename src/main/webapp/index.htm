@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="it">
+<head>
+	<title>Il Catalogo dei Dati Geografici, Servizio Geologico Sismico e dei Suoli, Regione Emilia-Romagna</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="description" content="Il Catalogo dei Dati Geografici, Servizio Geoologico Sismico e dei Suoli, Direzione Generale Ambiente e Difesa del Suolo e della Costa, 
+	Assessorato Sicurezza Territoriale. Difesa Suolo e Costa. Protezione Civile, Regione Emilia-Romagna" />
+	
+	
+	<link rel="stylesheet" media="screen"  type="text/css" href="styles/styles.css" />
+	  <!--[if lt IE 8]>
+	  <style type="text/css">
+		.tabella_menu li {
+			margin-top:-1px;
+		}
+		.tabella_menu span.metalink {
+			vertical-align:middle;
+		}
+		
+	  </style>
+	  <![endif]-->	
+   
+	<link rel="stylesheet" href="js/OpenLayers-2.8/theme/default/style.css" type="text/css" />
+	<link rel="stylesheet" href="js/OpenLayers-2.8/theme/default/scalebar-thin.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="js/highslide/highslide.css" />
+
+	<!-- Piwik Prod New Tracking Code -->
+	<script type="text/javascript">
+		var _paq = _paq || [];
+	var index1 = location.href.indexOf("applicazioni.regione.emilia-romagna.it");
+	var index2 = location.href.indexOf("applicazionitest.regione.emilia-romagna.it");
+	var index3 = location.href.indexOf("cm.regione.emilia-romagna.it");
+	var index6 = location.href.indexOf("localhost");
+	var index7 = location.href.indexOf("//10.");
+	(function(){ var u="https://statisticheweb.regione.emilia-romagna.it/analytics/";
+	if (index1==-1 && index2==-1 && index3==-1 && index6==-1 && index7==-1){
+		_paq.push(['setSiteId', 82]);
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setDocumentTitle', document.domain + "/" + document.title]);
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
+		s.parentNode.insertBefore(g,s); }})();
+	</script>
+	<noscript><p><img src="https://statisticheweb.regione.emilia-romagna.it/analytics/piwik.php?idsite=82" style="border:0" alt="" /></p></noscript>
+	<!-- End Piwik Prod New Tracking Code -->
+	
+	<script src="js/OpenLayers-2.8/lib/OpenLayers.js" type="text/javascript"></script>
+	<script src="js/highslide/highslide-full.js" type="text/javascript"></script>
+	
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/proj4js-compressed.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG202032.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG202003.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG23032.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG25832.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG32632.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG4326.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG4258.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG3003.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG3004.js" type="text/javascript"></script>
+	<script src="js/OpenLayers-2.8/lib/proj4js/lib/defs/EPSG3857.js" type="text/javascript"></script>
+
+	<script src="js/funzioniAjax.js" type="text/javascript"></script>
+	<script src="js/funzioniBody.js" type="text/javascript"></script>
+	<script src="js/funzioniRicerca.js" type="text/javascript"></script>
+	<script src="js/funzioniAlbero.js" type="text/javascript"></script>
+	<script src="js/funzioniMappa.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	/*<![CDATA[*/
+
+	var WinCARG=null; 
+	
+	function ApriFinestra(sURL){ 
+	   var isNav=false; 
+	   var aw=screen.availWidth; 
+	   var ah=screen.availHeight; 
+	   
+	   if (navigator.appName=="Netscape") {
+		isNav =true;
+	   } 
+	   
+	   if (isNav){
+		ah=ah-23-23;
+		aw=aw-10; 
+	   } else {
+		ah=ah-25-35;
+		aw=aw-10;
+	   } 
+
+	   var sParam="width="+aw+",height="+ah+",resizable=no,menubar=no,location='no',toolbar=no,status=yes,scrollbars=no,top=0,left=0'";
+		 
+	   if(WinCARG!=null){
+	   
+			WinCARG.focus();
+	   
+	   } else {
+	   
+			WinCARG=window.open("","cargWin",sParam);
+			WinCARG.location="popup.htm"; 
+			WinCARG.focus();
+			WinCARG=null;
+	   
+	   }
+  }
+
+
+		// VARIABILI GLOBALI:
+        var lettera=0;
+		var lettere=new Array();
+		lettere[0]="A";
+		lettere[1]="B";
+		lettere[2]="C";
+		lettere[3]="D";
+		lettere[4]="E";
+		lettere[5]="F";
+		lettere[6]="G";
+		lettere[7]="H";
+		lettere[8]="I";
+		lettere[9]="J";
+		lettere[10]="K";
+		lettere[11]="L";
+		lettere[12]="M";
+		lettere[13]="N";
+		lettere[14]="O";
+		lettere[15]="P";
+		lettere[16]="Q";
+		lettere[17]="R";
+		lettere[18]="S";
+		lettere[19]="T";
+		lettere[20]="U";
+		lettere[21]="V";
+		lettere[22]="W";
+		lettere[23]="X";
+		lettere[24]="Y";
+		lettere[25]="Z";
+		
+		var map, scales, scalesOverview, unita, extent, coordsDigits, resolutions, resOverview, coordsControl, layerOverView;
+		
+		var newLayerSde = new Array();
+		var newLayerWMS = new Array();
+		
+		var coordX, coordY, popup, layerMarkers;
+
+		var arClickedElementID = new Array();
+		var arAffectedMenuItemID = new Array();
+		
+		var applicationPath=document.location.href.replace(document.location.search,"").replace("index.htm","");
+		var laTOC;
+		var loadingPan;
+		var tocChiusa=false, chiusuraTOCauto=false;
+
+		// VARIABILE GLOBALE DEL SISTEMA DI RIFERIMENTO INIZIALE DELLA MAPPA
+		var srsGlobal="EPSG:202003";
+		
+		// VARIABILE GLOBALE DEL SISTEMA DI RIFERIMENTO DELLE FEATURECLASS ARCSDE (VA CAMBIATO SOLO DALLA PROVINCIA DI BO O QUANDO CAMBIAMO SISTEMA DI RIFERIMENTO)
+		var srsDefault="EPSG:202003";
+		
+		var srsLabels = new Array();
+		var srsLabelsX = new Array();
+		var srsLabelsY = new Array();
+		var srsLabelsEs = new Array();
+		
+		srsLabels["apri_1"]=" - Gauss-Boaga [Roma40]:";
+
+		srsLabels["EPSG:202003"]="UTMRER [Roma40] (EPSG:202003/5659)";
+		srsLabelsX["EPSG:202003"]="x: ";
+		srsLabelsY["EPSG:202003"]="y: ";
+		srsLabelsEs["EPSG:202003"]="x: 686400.5 - y: 930600.5";
+		
+		srsLabels["EPSG:3003"]="Gauss-Boaga Ovest [Roma40] (EPSG:3003)";
+		srsLabelsX["EPSG:3003"]="x: ";
+		srsLabelsY["EPSG:3003"]="y: ";
+		srsLabelsEs["EPSG:3003"] ="x: 1686400.5 - y: 4930600.5";
+		
+		srsLabels["chiudi_1"]="&nbsp;";
+
+		srsLabels["apri2"]=" - European Datum 1950 [ED50]:";
+		
+		srsLabels["EPSG:202032"]="UTMA [ED50] (EPSG:202032)";
+		srsLabelsX["EPSG:202032"]="x: ";
+		srsLabelsY["EPSG:202032"]="y: ";
+		srsLabelsEs["EPSG:202032"]="x: 686400.5 - y: 930600.5";
+		
+		srsLabels["EPSG:23032"]="UTM 32N [ED50] (EPSG:23032)";
+		srsLabelsX["EPSG:23032"]="x: ";
+		srsLabelsY["EPSG:23032"]="y: ";
+		srsLabelsEs["EPSG:23032"] ="x: 686400.5 - y: 4930600.5";
+		
+		srsLabels["chiudi_2"]="&nbsp;";
+		
+		
+		srsLabels["apri3"]=" - European Terrestrial Ref System 1989 [ETRS89]:";
+		
+		srsLabels["EPSG:25832"]="UTM 32N [ETRS89] (EPSG:25832)";
+		srsLabelsX["EPSG:25832"]="x: ";
+		srsLabelsY["EPSG:25832"]="y: ";
+		srsLabelsEs["EPSG:25832"] ="x: 686400.5 - y: 4930600.5";
+		
+		srsLabels["EPSG:4258"]="LatLong [ETRS89] (EPSG:4258)";
+		srsLabelsX["EPSG:4258"]="Lon: ";
+		srsLabelsY["EPSG:4258"]="Lat: ";
+		srsLabelsEs["EPSG:4258"] ="Lon: 11.34312 - Lat: 44.49365";
+		srsLabels["chiudi_3"]="&nbsp;";
+		
+		
+		
+		srsLabels["apri_4"]=" - World Geodetic System 1984 [WGS84]:";
+		
+		srsLabels["EPSG:32632"]="UTM 32N [WGS84] (EPSG:32632)";
+		srsLabelsX["EPSG:32632"]="x: ";
+		srsLabelsY["EPSG:32632"]="y: ";
+		srsLabelsEs["EPSG:32632"]="x: 686400.5 - y: 4930600.5";
+
+		/*srsLabels["EPSG:3004"]="Roma 40 / Gauss-Boaga Est (EPSG:3004)";
+		srsLabelsX["EPSG:3004"]="x: ";
+		srsLabelsY["EPSG:3004"]="y: ";
+		srsLabelsEs["EPSG:3004"] ="x: 1686400.5 - y: 4930600.5";*/
+	
+		srsLabels["EPSG:4326"]="LatLong [WGS84] (EPSG:4326)";
+		srsLabelsX["EPSG:4326"]="Lon: ";
+		srsLabelsY["EPSG:4326"]="Lat: ";
+		srsLabelsEs["EPSG:4326"]="Lon: 11.34312 - Lat: 44.49365";
+
+		srsLabels["EPSG:3857"]="Pseudo Mercator [WGS84] (EPSG:3857)";
+		srsLabelsX["EPSG:3857"]="x: ";
+		srsLabelsY["EPSG:3857"]="y: ";
+		srsLabelsEs["EPSG:3857"]="x: 1386400.5 - y: 5550000";
+
+		srsLabels["chiudi_4"]="&nbsp;";
+
+
+		function init(){
+			window.onresize=function(){ 
+				setSizes();
+			} 
+			
+			getMenuTree();
+			loadMappa(); //getRemoteIp();
+			tocChiusa=false;
+		}
+		
+		function hsFocus(elementId) { 
+			var exp = hs.getExpander(); 
+				if (exp && exp.iframe) {
+					var objFoc;
+					if ( exp.iframe.contentDocument ) { // DOM
+						objFoc = exp.iframe.contentDocument.getElementById(elementId);
+					}
+					else if ( exp.iframe.contentWindow ) { // IE win
+						objFoc = exp.iframe.contentWindow.document.getElementById(elementId);
+					}                   
+					else if ( exp.iframe.document )  { // Version moi
+						objFoc = exp.iframe.document.getElementById(elementId);
+					}                 
+					if (objFoc) {
+						objFoc.focus();
+						//objFoc.select();
+					}
+				}
+		}
+		
+	/*]]>*/
+	</script>
+
+</head>
+
+<body onload="init()">
+	<!--<ul class="skip_">
+		<li><a href="#menu_catalogo" title="Salta al menu principale - accesskey n" accesskey="n">Salta al menu principale [n]</a> </li>
+		<li><a href="help.htm" title="Apri la guida">Guida</a> </li>
+	</ul>-->
+	<div id="header">
+		<!-- Logo-dx -->
+		<div id="logo_dx">	
+			<a href="http://www.regione.emilia-romagna.it" title="Apri il Portale della Regione Emilia-Romagna"><img src="images/logopictra.gif" alt="Logo Regione Emilia-Romagna" width="120" height="17" /></a>
+		</div>
+		<!-- Fascia -->
+		<div id="fascia">
+			<div id="logo">
+				<div id="logoriga1"><h1>Servizio Geologico, Sismico e dei Suoli</h1></div>
+				<div id="logoriga2"><h2>Catalogo dei Dati Geografici</h2></div>
+				<div id="help">
+				<a href="http://geo.regione.emilia-romagna.it/gstatico/documenti/geocatalogo/guida.pdf" onclick="return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe', objectLoadTime: 'after'})" onkeypress="if (event.keyCode == 13) {return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe', objectLoadTime: 'after'})}" class="highslide" title="Apri la pagina della guida"><img src="images/HelpIcon.png" alt="Pagina della guida"/></a>
+				</div>
+			</div>
+		</div>
+		<div id="autore">
+			<div class="voce_orizontale">
+				<a id="documenti" href="documenti.jsp" onclick="hs.Expander.prototype.onAfterExpand = function() { hsFocus('tipoArea') }; return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})" onkeypress="if (event.keyCode == 13) { hs.Expander.prototype.onAfterExpand = function() { hsFocus('tipoArea') }; return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})}" class="highslide" title="Apri la pagina di ricerca documenti">documenti</a>
+			</div>
+			<div class="voce_orizontale">
+				<a id="salva" href="salva.htm" onclick="hs.Expander.prototype.onAfterExpand = function() {hsFocus('link')}; return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})" onkeypress="if (event.keyCode == 13) {hs.Expander.prototype.onAfterExpand = function() {hsFocus('link')};	return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})}" class="highslide" title="Apri la pagina per la gestione delle mappe memorizzate">mappe</a>
+			</div>
+			<div class="voce_orizontale">
+				<a id="cerca" href="searchToponimi.jsp" onclick="hs.Expander.prototype.onAfterExpand = function() {hsFocus('provincia')}; return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})" onkeypress="if (event.keyCode == 13) { hs.Expander.prototype.onAfterExpand = function() {hsFocus('provincia')}; return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})}" class="highslide" title="Apri la pagina di ricerca per toponimi">cerca toponimi</a>
+			</div>
+			<div class="voce_orizontale">
+				<a id="toponimi" href="searchForms.jsp" onclick="hs.Expander.prototype.onAfterExpand = function() {hsFocus('q')}; return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})" onkeypress="if (event.keyCode == 13) { hs.Expander.prototype.onAfterExpand = function() {hsFocus('q')};	return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})}" class="highslide" title="Apri la pagina strumenti di ricerca e selezione">strumenti</a>
+			</div>
+		</div>
+		
+		<div id="coords"></div>
+		<div id="scala"></div>
+		<div id="srs">
+				<script type="text/javascript">
+				/*<![CDATA[*/
+
+					document.write("<select onchange=\"cambiaSrs(this.options[this.selectedIndex].value)\" name=\"srsSelect\" title=\"Scegli il sistema di riferimento di coordinate della mappa\" id=\"srsSelect\">");
+					for (var srsIdx in srsLabels) {
+						selected="";
+						if(srsIdx==srsGlobal)
+							selected="selected=\"selected\"";
+						
+
+						if(srsIdx.indexOf("EPSG:")>-1)
+							document.write("<option value=\""+srsIdx+"\" "+selected+" >"+srsLabels[srsIdx]+"<\/option>");
+						else
+							if(srsIdx.indexOf("apri")>-1)
+								document.write("<optgroup label=\""+srsLabels[srsIdx]+"\">");
+							else
+								document.write("<\/optgroup>");
+					}
+					document.write("<\/select>");
+				/*]]>*/
+				</script>
+		</div>
+		<div id="divSelCom"></div>
+		
+	</div>
+	
+
+	<div id="menu">
+		<div id="menuTree">
+
+			<noscript>
+				<p class="info_noscript">Per la visualizzazione del Catalogo dei dati Geografici del Servizio Geologico Sismico e dei Suoli della Regione Emilia Romagna è necessario abilitare Javascript.<br/>
+				<a class="guida" href="help.htm" title="Apri la guida">Leggi la guida per ulteriori informazioni</a>.</p>
+			</noscript>
+			
+		</div>
+	</div>
+	
+	<div id="div_thumb">
+		<div id="div_thumb_head"></div>
+		<img id="display_thumb" alt="Anteprima in caricamento" src="images/ajax-loader2.gif" />
+		<div id="div_thumb_desc"></div>
+		<div id="div_thumb_dwn">
+			<p><img alt="Dati scaricabili in formato ESRI Shapefile" title="Dati scaricabili in formato ESRI Shapefile" src="images/download.png" style="border:0px; vertical-align: middle;" />
+			<span>Dati scaricabili</span>:<br />aggiungere il layer alla mappa e cliccare sull'icona di download nella legenda</p>
+		</div>
+	</div>
+
+	<div id="mappa"></div>
+	
+	<div id="footer">
+		<div class="ermes">
+			<div class="logo_ermes">
+				<!-- <a href="http://www.regione.emilia-romagna.it" title="Apri ERMES il Portale della Regione Emilia-Romagna">
+					<img src="images/logo_ermes.gif" alt="Logo ERMES il Portale della Regione Emilia-Romagna" width="120" height="39" />
+				</a>-->
+				<a href="http://www.regione.emilia-romagna.it" title="Apri il Portale della Regione Emilia-Romagna" rel="external"><img src="images/logo_er.png" alt="Logo del Portale della Regione Emilia-Romagna" height="31" /></a>
+			</div> 
+			<a href="http://ambiente.regione.emilia-romagna.it/geologia/" title="Apri il portale regionale del Servizio Geologico, Sismico e dei Suoli" rel="external">
+				<img src="images/logo_sgss.gif" width="30" height="31" alt="Servizio Geologico, Sismico e dei Suoli" />
+			</a>
+			<ul>
+				<li>&#8250;&#8250;&nbsp;<a href="http://www.regione.emilia-romagna.it/wcm/ermes/pagine/privacy.htm"><span lang="en" xml:lang="en">Privacy</span></a></li>
+				<li>&#8250;&#8250;&nbsp;<a href="credits.htm" onclick="return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})" onkeypress="if (event.keyCode == 13) {return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe'})}" class="highslide" title="Apri la pagina dei credits"><span lang="en" xml:lang="en">Credits</span></a></li> 
+				<li>&#8250;&#8250;&nbsp;<a href="http://www.regione.emilia-romagna.it/wcm/ermes/pagine/accessibilita.htm">Accessibilità</a></li>
+				<li>&#8250;&#8250;&nbsp;<a href="http://geo.regione.emilia-romagna.it/gstatico/documenti/geocatalogo/guida.pdf" onclick="return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe', objectLoadTime: 'after'})" onkeypress="if (event.keyCode == 13) {return hs.htmlExpand(this, {align: 'center', outlineType: 'rounded-white', wrapperClassName: 'draggable-header', objectType: 'iframe', objectLoadTime: 'after'})}" class="highslide" title="Apri la pagina della guida">Guida</a></li>
+			</ul>
+			<div class="scritta_spaziata">
+				Servizio Geologico Sismico e dei Suoli, Regione Emilia-Romagna (<abbr title="partita">p.</abbr> IVA 80062590379)
+				<br />Viale della Fiera, 8 - 40127 Bologna tel.051-527.47.92 <a href="mailto:segrgeol@regione.emilia-romagna.it">segrgeol@regione.emilia-romagna.it</a>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+	var arrInnerSize=getInnerSize();
+
+	hs.width = arrInnerSize[0]-50;
+	hs.height = arrInnerSize[1]-95-65-10;//document.getElementById("menuTree").clientHeight-2//document.body.offsetHeight-50;
+	hs.cacheAjax = false;
+
+	document.getElementById("mappa").style.height=document.getElementById("menu").clientHeight+"px";
+	document.getElementById("mappa").style.width=(arrInnerSize[0]-document.getElementById("menu").clientWidth-16)+"px";
+	//document.getElementById("mappa").style.width=(arrInnerSize[0]-document.getElementById("menu").clientWidth-50)+"px";
+
+	//alert(document.getElementById("mappa").style.width);
+/*]]>*/
+</script>
+
+</body>
+</html>
+

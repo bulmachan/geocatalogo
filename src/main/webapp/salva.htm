@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="it">
+<head>
+  <title>Il Catalogo dei Dati Geografici, Servizio Geologico Sismico e dei Suoli, Regione Emilia-Romagna - Gestione mappe</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" media="screen"  type="text/css" href="styles/carg_style.css" />
+	<link rel="stylesheet" media="screen"  type="text/css" href="styles/style_pop.css" />
+
+	<script type="text/javascript" src="js/funzioniAjax.js"></script>
+	<script type="text/javascript">
+	/*<![CDATA[*/
+		function salvaSessione(){
+
+			var url=creaLink();
+
+			//prompt("",'setCookie.jsp'+"?"+'nome='+document.forms[1].nomeSessione.value+'&url=' + url.replace(/&/g, "$"));
+			
+			var nomeSessione = document.getElementById("nomeSessione").value;
+			nomeSessione = nomeSessione.replace(/^\s+|\s+$/g, "");
+
+			if (nomeSessione == "") {
+
+				alert("Attenzione è necessario dare un nome alla mappa.");
+				document.getElementById("nomeSessione").focus();
+
+			} else {
+
+				//var valid = "abcdefghijklmnopqrstuvwxyz0123456789 -.";
+				var inValid = "<>/:";
+				var ok = "yes";
+				var temp;
+				for (var i=0; i<nomeSessione.length; i++) {
+					temp = "" + nomeSessione.substring(i, i+1);
+					if (inValid.indexOf(temp)>-1){
+						ok = "no";
+						break;
+					}
+				}
+				if (ok == "no") {
+					alert("Attenzione, il nome inserito contiene caratteri non validi, non sono ammessi i seguenti: "+inValid+".");
+					document.getElementById("nomeSessione").focus();
+					document.getElementById("nomeSessione").select();
+			    } else {
+					//xmlAjaxRequest('setCookie.jsp', 'nome='+nomeSessione.replace(/\s/g, "_")+'&url=' + url.replace(/&/g, "$"), null, salvaSessioneRes, 'text');
+					xmlAjaxRequest('setCookie.jsp', 'nome='+escape(nomeSessione)+'&url=' + url.replace(/&/g, "$"), null, salvaSessioneRes, 'text');
+					prompt("",'setCookie.jsp?nome='+escape(nomeSessione)+'&url=' + url.replace(/&/g, "$"));
+				}		
+			}
+		}
+
+		function salvaSessioneRes(result){
+			if (result){
+				if (result=="OK"){
+					//alert("Sessione salvata correttamente");
+					window.location.reload();
+				}
+			}
+		}
+		function controllaCookies(){
+			xmlAjaxRequest('getCookiesList.jsp', null , null, controllaCookiesRes, 'text');
+		}
+
+		function controllaCookiesRes(result){
+			if (result){
+				if (result!=""){
+					document.getElementById("listaSessioni").innerHTML=result;
+				//} else {
+				//	alert ("non ci sono cookies");
+				}
+			//} else {
+			//	alert ("non ci sono cookies");
+			}
+		}
+		function loadCookie(c){
+		
+			xmlAjaxRequest('loadCookie.jsp', 'c='+c , null, loadCookieRes, 'text');
+		}
+		function loadCookieRes(result){
+		
+			if (result){
+				if (result!=""){
+
+					var ris=result.split("<||>");
+					
+					if(ris.length==2){
+						parent.document.location=ris[0]+"&titolo="+encodeURI(ris[1]);
+					}
+				}
+			}
+		}
+		
+		function clearCookie(c){
+			xmlAjaxRequest('clearCookie.jsp', 'c='+c , null, clearCookieRes, 'text');
+		}
+		
+		function clearCookieRes(result){
+			if (result){
+				window.location.reload();
+			}
+		}
+		
+		function creaLink(){
+
+			var listaLayers="";
+			var listaSfondi="";
+			var expression="";
+			var listaPunti="";
+			for (var i = 0; i < parent.map.layers.length; i++) {
+				//if (!parent.map.layers[i].isBaseLayer && parent.map.layers[i].name.indexOf("Ctr")==-1) {
+				if (parent.map.layers[i].tipo!="BASE") {
+					/*if(parent.map.layers[i].tipo=="WMS")
+						listaLayers+=parent.map.layers[i].url+"LAYERS="+parent.map.layers[i].params.LAYERS+",";
+					else
+						listaLayers+=parent.map.layers[i].params.LAYERS.replace("=","@")+",";
+					*/
+					
+					/* il problema è che il layer con selezione (proprio perchè non li carichi cliccando sull'albero) hanno treeId nullo !!!! */
+					if(parent.map.layers[i].expression!=null)
+						listaLayers+=parent.map.layers[i].treeId+"."+parent.map.layers[i].expression.replace("=","@")+","; /* AGGIUNTA EXPRESSION */
+					else
+						listaLayers+=parent.map.layers[i].treeId+",";
+				} else {
+					if(parent.map.layers[i].visibility && parent.map.layers[i].displayInLayerSwitcher)
+						listaSfondi+=parent.map.layers[i].id+",";
+
+					if(parent.map.layers[i] instanceof parent.OpenLayers.Layer.Markers){
+						for (var jj = 0; jj < parent.map.layers[i].markers.length; jj++) {
+							listaPunti+=parent.map.layers[i].markers[jj].lonlat.lon+","+parent.map.layers[i].markers[jj].lonlat.lat+":";
+						}
+					}
+
+				}
+			}
+			var x=parent.map.getCenter().lon;
+			var y=parent.map.getCenter().lat;
+			
+			if(parent.map.getUnits()=='m'){
+				x=x.toFixed(0);
+				y=y.toFixed(0);
+			}
+			
+			var applicationPath=document.location.href.replace(document.location.search,"").replace("salva.htm","");
+			
+			return(applicationPath+"index.htm?"+"centro="+x+","+y+"&scala="+parent.map.getScale().toFixed(0)+"&srs="+parent.srsGlobal+"&livelli="+listaLayers.substr(0,listaLayers.length-1)+"&sfondi="+listaSfondi.substr(0,listaSfondi.length-1)+"&markers="+listaPunti.substr(0,listaPunti.length-1));
+
+			//prompt("Link alla sessione di lavoro corrente:", applicationPath+"index.htm?"+"centro="+x+","+y+"&scala="+parent.map.getScale().toFixed(0)+"&livelli="+listaLayers.substr(0,listaLayers.length-1));
+			
+			
+		}
+		
+		function mostraLink(){
+
+			//prompt("Link alla sessione di lavoro corrente:",creaLink());
+			document.getElementById("link").value=creaLink();
+			
+		}
+
+
+	/*]]>*/
+	</script>
+</head>
+ <body onload="controllaCookies();" >
+	<h1>Gestione mappe</h1>
+	<div class="block">
+	<h2>Mappa attuale</h2>
+	<form method="post" id="copiaLink" action="javascript:mostraLink();">
+	<fieldset>
+		<legend>Copia indirizzo</legend>
+		<div>
+		<label for="link" title="Copia l'indirizzo indicato">Indirizzo: </label>
+		<input type="text" id="link" name="link" value=""/>
+		<script type="text/javascript">
+			document.getElementById("link").value=creaLink();
+			document.getElementById("link").select();
+		</script>
+		<p>Selezionare il testo dell'indirizzo sopra indicato, cliccare con il tasto destro del mouse e scegliere "Copia", per copiare l'indirizzo della mappa corrente. <br/>
+		Tramite l'indirizzo copiato sarà possibile riaprire la mappa visualizzando i livelli caricati e le selezioni, alla posizione, scala e sistema di coordinate correnti. <br/>
+		In questo modo, ad esempio, potrete inviare il link così da condividere la mappa visualizzata.</p>
+		</div>
+	</fieldset>
+	</form>
+	</div>
+	
+	<h2>Le mie mappe</h2>	
+	<form method="post" id="salvaSessione" action="javascript:salvaSessione();">
+	<fieldset>
+	<legend>Memorizza mappa corrente</legend>	
+	<div class="block">
+		<div>
+			<label for="nomeSessione" class="label" title="Inserisci il nome da associare alla mappa visualizzata e che si desidera memorizzare">Nome della mappa:</label>
+			<input type="text" name="nomeSessione" size="20" value="" id="nomeSessione"/>
+			<input type="submit" class="button w_10" title="Memorizza la mappa corrente"value="Memorizza"/>
+			<p>Indicato un nome di etichetta per identificare la mappa corrente e cliccando sul bottone Salva, sarà possibile memorizzare 
+			la mappa attuale,<br/> sempre da questa finestra sarà quindi possibile in un secondo momento, riaprire il Catalogo dei Dati Geografici 
+			del Servizio Geologico, Sismico e dei Suoli, <br/> e caricare le mappe precedentemente memorizzate.</p>
+			<p class="italic small">
+			Attenzione questa funzionalità necessita che nel proprio browser siano abilitati i Cookies<br />
+			(<a href="http://it.wikipedia.org/wiki/Cookie">cosa significa?</a> 
+			<a href="http://www.google.it/support/websearch/bin/answer.py?hl=it&amp;answer=35851">come farlo?</a>)</p>
+		</div>
+	</div>
+	</fieldset>
+	</form>
+	
+	<form action="">
+	<fieldset>
+	<legend>Lista delle mappe precedentemente memorizzate:</legend>	
+	<div class="block">
+	<div id="listaSessioni">Nessuna mappa memorizzata </div>
+	</div>
+	</fieldset>
+	</form>
+	
+	<div class="centrata">
+	<input type="button" 
+		value="Chiudi" 
+		title="Chiudi la finestra" 
+		onclick="return parent.window.hs.close();"
+		onkeypress="if (event.keyCode == 13) {return parent.window.hs.close();}"
+		class="button w_12" />
+	</div>
+ </body>
+</html>
