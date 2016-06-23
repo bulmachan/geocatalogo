@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Git build info ${artifactId}</title>
+	<style>
+	.alert-box {
+		color:#555;
+		border-radius:10px;
+		font-family:Open Sans,sans-serif;font-size:11px;
+		padding:5px 5px 5px 5px;
+		margin:8px;
+		width:40%;
+		
+	}
+	.warning {
+		background-color:#fff8c4;
+		border:1px solid #f2c779;
+	}
+</style>	
+</head>
+
+<body>
+<div class="alert-box warning">
+<h1>- Info box ${artifactId} -</h1>
+<p>Build version: ${git.build.version}</p>
+<p>Env properties: ${env.properties}</p>
+<p>Git commit sha-1 short: ${git.commit.id.describe-short}</p>
+<p>Git commit message: ${git.commit.message.full}</p>
+<p>Git commit username: ${git.commit.user.name}</p>
+<p>Git commit time: ${git.commit.time}</p>
+<p>Git build username: ${git.build.user.name}</p>
+<p>Git build time: ${git.build.time}</p>
+</div>
+</body>
+
+</html>
