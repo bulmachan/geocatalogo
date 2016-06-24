@@ -35,8 +35,17 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- default env.properties !-->
 		<env.properties>prod</env.properties>
+		<geotools.version>2.7.0</geotools.version>
 	</properties>
-
+	
+    <repositories>
+	 <repository>
+          <id>osgeo</id>
+          <name>Open Source Geospatial Foundation Repository</name>
+          <url>http://download.osgeo.org/webdav/geotools/</url>
+      </repository>
+	 </repositories>
+	 
 	<dependencies>
 		<dependency>
 		<groupId>junit</groupId>
@@ -44,186 +53,129 @@
 		<version>4.12</version>
 		<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>2.1</version>
+		</dependency>
+		     
+		<!-- https://mvnrepository.com/artifact/xml-apis/xml-apis -->
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+			 
+		<!-- https://mvnrepository.com/artifact/xerces/xerces -->
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xerces</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		 
+		<!-- https://mvnrepository.com/artifact/org.apache.axis/axis -->
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis</artifactId>
+			<version>1.4</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.ibm.icu/icu4j -->
+		<dependency>
+			<groupId>com.ibm.icu</groupId>
+			<artifactId>icu4j</artifactId>
+			<version>57.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.opengis/geoapi -->
+		<dependency>
+			<groupId>org.opengis</groupId>
+			<artifactId>geoapi</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.vividsolutions/jts -->
+<dependency>
+    <groupId>com.vividsolutions</groupId>
+    <artifactId>jts</artifactId>
+    <version>1.13</version>
+</dependency>
+
+	
+		<dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-main</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+		
+		<dependency>
+		  <groupId>org.geotools</groupId>
+		  <artifactId>gt-referencing</artifactId>
+		  <version>${geotools.version}</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.geotools</groupId>
+		  <artifactId>gt-wms</artifactId>
+		  <version>${geotools.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.geotools</groupId>
+			<artifactId>gt-arcsde</artifactId>
+			<version>${geotools.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
+		<!-- JExcelApi is a java library which provides the ability to read, write, and modify Microsoft Excel spreadsheets -->
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/axis/axis-wsdl4j -->
+		<dependency>
+			<groupId>axis</groupId>
+			<artifactId>axis-wsdl4j</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/soap/soap -->
+		<dependency>
+			<groupId>soap</groupId>
+			<artifactId>soap</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.esri</groupId>
+			<artifactId>jpe_sdk</artifactId>
+			<version>10</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.esri</groupId>
+			<artifactId>jsde_sdk</artifactId>
+			<version>10</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.esri</groupId>
+			<artifactId>jsde_sdkres</artifactId>
+			<version>10</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.esri</groupId>
+			<artifactId>arcims_jconnect</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
 	</dependencies>
 
-	<profiles>
 	
-		<profile>
-			<id>test</id>
-			<properties>
-				<env.properties>prod</env.properties>
-			</properties>
-			<build>
-				<resources>
-					<resource>
-					<directory>src/main/resources</directory>
-					<filtering>true</filtering>
-					</resource>
-				</resources>
-				<finalName>${project.artifactId}-${project.version}-${env.properties}</finalName>
-				<plugins>
-					<plugin>
-						<groupId>pl.project13.maven</groupId>
-						<artifactId>git-commit-id-plugin</artifactId>
-						<version>2.2.1</version>
-					   <!--
-							 Ensure that the revision goal is invoked during the initialize
-							 phase.
-						-->
-						<executions>
-							<execution>
-								<goals>
-									<goal>revision</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<!--
-								Configure the location of the .git directory.
-							-->
-							<dotGitDirectory>.git</dotGitDirectory>
-						</configuration>
-					</plugin>
-					
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-war-plugin</artifactId>
-						<version>2.3</version>
-						<configuration>
-							<archive>
-								<manifest>
-									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-								</manifest>
-								<manifestEntries>
-									<git-sha1-short>${git.commit.id.describe-short}</git-sha1-short>
-									<git-commit-message>${git.commit.message.full}</git-commit-message>
-									<env-properties>${env.properties}</env-properties>
-									<git-commit-username>${git.commit.user.name}</git-commit-username>
-									<git-commit-time>${git.commit.time}</git-commit-time>
-									<git-build-username>${git.build.user.name}</git-build-username>
-									<git-build-time>${git.build.time}</git-build-time>							
-								</manifestEntries>
-							</archive>
-							<webResources>
-								<webResource>
-									<directory>src/main/webapp</directory>
-									<filtering>true</filtering>
-								</webResource>
-							</webResources>
-						</configuration>
-					</plugin>
-					
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<version>1.7</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<configuration>
-									<target>
-										<copy file="${project.build.directory}/${project.artifactId}-${project.version}-${env.properties}.war" tofile="/mnt/condivisa/jboss_deploy/${project.artifactId}-${project.version}-${env.properties}.war" overwrite="true"/>
-										<echo message="Copying file  /mnt/condivisa/jboss_deploy/${project.artifactId}-${project.version}-${env.properties}.war "/>
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-		<profile>
-			<id>prod</id>
-			<properties>
-				<env.properties>prod</env.properties>
-			</properties>
-			<build>
-				<resources>
-					<resource>
-					<directory>src/main/resources</directory>
-					<filtering>true</filtering>
-					</resource>
-				</resources>
-				<finalName>${project.artifactId}-${project.version}-${env.properties}</finalName>
-				<plugins>
-					<plugin>
-						<groupId>pl.project13.maven</groupId>
-						<artifactId>git-commit-id-plugin</artifactId>
-						<version>2.2.1</version>
-					   <!--
-							 Ensure that the revision goal is invoked during the initialize
-							 phase.
-						-->
-						<executions>
-							<execution>
-								<goals>
-									<goal>revision</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<!--
-								Configure the location of the .git directory.
-							-->
-							<dotGitDirectory>.git</dotGitDirectory>
-						</configuration>
-					</plugin>
-					
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-war-plugin</artifactId>
-						<version>2.3</version>
-						<configuration>
-							<archive>
-								<manifest>
-									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-								</manifest>
-								<manifestEntries>
-									<git-sha1-short>${git.commit.id.describe-short}</git-sha1-short>
-									<git-commit-message>${git.commit.message.full}</git-commit-message>
-									<env-properties>${env.properties}</env-properties>
-									<git-commit-username>${git.commit.user.name}</git-commit-username>
-									<git-commit-time>${git.commit.time}</git-commit-time>
-									<git-build-username>${git.build.user.name}</git-build-username>
-									<git-build-time>${git.build.time}</git-build-time>							
-								</manifestEntries>
-							</archive>
-							<webResources>
-								<webResource>
-									<directory>src/main/webapp</directory>
-									<filtering>true</filtering>
-								</webResource>
-							</webResources>
-						</configuration>
-					</plugin>
-					
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<version>1.7</version>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<configuration>
-									<target>
-										<copy file="${project.build.directory}/${project.artifactId}-${project.version}-${env.properties}.war" tofile="/mnt/condivisa/jboss_deploy/${project.artifactId}-${project.version}-${env.properties}.war" overwrite="true"/>
-										<echo message="Copying file  /mnt/condivisa/jboss_deploy/${project.artifactId}-${project.version}-${env.properties}.war "/>
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-</profiles>  
 
 	<build>
 	</build>
