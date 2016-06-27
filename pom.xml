@@ -5,7 +5,6 @@
 		<groupId>com.rer.sgss</groupId>
 		<artifactId>commonapp</artifactId>
 		<version>1.0</version>
-		<relativePath>../commonapp/pom.xml</relativePath>
 	</parent>
 
 	<groupId>com.rer.sgss</groupId>
@@ -39,12 +38,12 @@
 	</properties>
 	
     <repositories>
-	 <repository>
-          <id>osgeo</id>
-          <name>Open Source Geospatial Foundation Repository</name>
-          <url>http://download.osgeo.org/webdav/geotools/</url>
-      </repository>
-	 </repositories>
+		<repository>
+		  <id>osgeo</id>
+		  <name>Open Source Geospatial Foundation Repository</name>
+		  <url>http://download.osgeo.org/webdav/geotools/</url>
+		</repository>
+	</repositories>
 	 
 	<dependencies>
 		<dependency>
@@ -96,13 +95,34 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.vividsolutions/jts -->
-<dependency>
-    <groupId>com.vividsolutions</groupId>
-    <artifactId>jts</artifactId>
-    <version>1.13</version>
-</dependency>
+		<dependency>
+			<groupId>com.vividsolutions</groupId>
+			<artifactId>jts</artifactId>
+			<version>1.13</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/axis/axis-wsdl4j -->
+		<dependency>
+			<groupId>axis</groupId>
+			<artifactId>axis-wsdl4j</artifactId>
+			<version>1.5.1</version>
+		</dependency>
 
-	
+		<!-- https://mvnrepository.com/artifact/soap/soap -->
+		<dependency>
+			<groupId>soap</groupId>
+			<artifactId>soap</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+				
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
+		<!-- JExcelApi is a java library which provides the ability to read, write, and modify Microsoft Excel spreadsheets -->
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+
 		<dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-main</artifactId>
@@ -127,28 +147,6 @@
 			<version>${geotools.version}</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
-		<!-- JExcelApi is a java library which provides the ability to read, write, and modify Microsoft Excel spreadsheets -->
-		<dependency>
-			<groupId>net.sourceforge.jexcelapi</groupId>
-			<artifactId>jxl</artifactId>
-			<version>2.6.12</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/axis/axis-wsdl4j -->
-		<dependency>
-			<groupId>axis</groupId>
-			<artifactId>axis-wsdl4j</artifactId>
-			<version>1.5.1</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/soap/soap -->
-		<dependency>
-			<groupId>soap</groupId>
-			<artifactId>soap</artifactId>
-			<version>2.3.1</version>
-		</dependency>
-		
 		<dependency>
 			<groupId>com.esri</groupId>
 			<artifactId>jpe_sdk</artifactId>
@@ -171,12 +169,9 @@
 			<groupId>com.esri</groupId>
 			<artifactId>arcims_jconnect</artifactId>
 			<version>1.0</version>
-		</dependency>
-		
+		</dependency>	
 	</dependencies>
-
 	
-
 	<build>
 	</build>
 </project>
