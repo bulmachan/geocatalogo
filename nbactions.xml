@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-vm35lnxJbossDeploy</actionName>
+            <displayName>vm35lnxJbossDeploy</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>jboss-as:deploy</goal>
+            </goals>
+        </action>
+    </actions>
