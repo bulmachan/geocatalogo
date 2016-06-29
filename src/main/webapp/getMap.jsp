@@ -49,7 +49,7 @@
 	
 	//?layers=BASE_USER.BASE_VF_REGIONE_ER_POL&bbox=660348.575846471,937771.28770505,660983.088417322,938188.006666195&WIDTH=800&HEIGHT=600
 
-	Category log = Category.getInstance("GEOCATALOGO");
+	//Category log = Category.getInstance("GEOCATALOGO"); //Duplicate local variable log (modev to configESRI.jsp)
 	
 	String width="";
 	String height="";

@@ -4,9 +4,9 @@
             <actionName>CUSTOM-vm35lnxJbossDeploy</actionName>
             <displayName>vm35lnxJbossDeploy</displayName>
             <goals>
-                <goal>clean</goal>
                 <goal>install</goal>
                 <goal>jboss-as:deploy</goal>
+                
             </goals>
         </action>
     </actions>
