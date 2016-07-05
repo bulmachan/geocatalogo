@@ -68,9 +68,65 @@
                 <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>
                 </properties>
             </profile>
+            <profile>
+                <id>WinProfile</id>
+                <activation>
+                  <os>
+                    <family>windows</family>
+                  </os>
+                </activation>
+                <properties>
+                  <target.dir>${project.basedir}\target\</target.dir>
+                  <war.shared.directory>\\vm35lnx\condivisa\jboss_deploy\</war.shared.directory>
+                </properties>
+            </profile>
+            <profile>
+                <id>UnixProfile</id>
+                <activation>
+                  <os>
+                    <family>unix</family>
+                  </os>
+                </activation>
+                <properties>
+                  <target.dir>${project.basedir}/target/</target.dir>
+                  <war.shared.directory>/mnt/condivisa/jboss_deploy/</war.shared.directory>
+                </properties>
+            </profile>
+            <profile>
+                <id>copy-war</id>
+                <build>
+                    <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.5</version>
+                        <configuration>
+                          <target>
+                            <copy overwrite="true"
+                                  file="${target.dir}${project.artifactId}-${project.version}-${env.properties}.${project.packaging}" 
+                                  tofile="${war.shared.directory}${project.artifactId}-${project.version}-${env.properties}.${project.packaging}" />
+                          </target>
+                        </configuration>
+                    </plugin>
+                    </plugins>
+                </build>
+            </profile>
          </profiles>
         
 	<build>
+            <!--<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                  <target>
+                    <echo message="hello ant, from Maven!"/>
+                    <echo>Maybe this will work?</echo>
+                  </target>
+                </configuration>
+            </plugin>
+            </plugins>-->
 	</build>
          
 	<dependencies>

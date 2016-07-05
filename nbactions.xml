@@ -37,4 +37,30 @@
                 <goal>jboss-as:undeploy</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-PROD-copy-war</actionName>
+            <displayName>PROD-copy-war</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>antrun:run</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>prod</activatedProfile>
+                <activatedProfile>copy-war</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-TEST-copy-war</actionName>
+            <displayName>TEST-copy-war</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>antrun:run</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>test</activatedProfile>
+                <activatedProfile>copy-war</activatedProfile>
+            </activatedProfiles>
+        </action>
     </actions>
