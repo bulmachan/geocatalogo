@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
         <action>
-            <actionName>CUSTOM-vm35lnxJbossDeploy</actionName>
-            <displayName>vm35lnxJbossDeploy</displayName>
+            <actionName>CUSTOM-vm35lnxJbossDeploy-PROD</actionName>
+            <displayName>vm35lnxJbossDeploy-PROD</displayName>
             <goals>
                 <goal>install</goal>
                 <goal>jboss-as:deploy</goal>
                 
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>prod</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-vm35lnxJbossDeploy-TEST</actionName>
+            <displayName>vm35lnxJbossDeploy-TEST</displayName>
+            <goals>
+                <goal>install</goal>
+                <goal>jboss-as:deploy</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>test</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean</actionName>
+            <displayName>clean</displayName>
+            <goals>
+                <goal>clean</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-vm35lnxJbossUndeploy</actionName>
+            <displayName>vm35lnxJbossUndeploy</displayName>
+            <goals>
+                <goal>jboss-as:undeploy</goal>
             </goals>
         </action>
     </actions>

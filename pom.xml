@@ -34,9 +34,6 @@
             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
             <!-- default env.properties !-->
             <env.properties>prod</env.properties>
-            <connectionSDEfileName>connectionSDE_${env.properties}</connectionSDEfileName>
-            <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>
-            <dataSource>java:/sgssprod</dataSource>
             <geotools.version>2.7.0</geotools.version>
 	</properties>
 	
@@ -47,7 +44,35 @@
                 <url>http://download.osgeo.org/webdav/geotools/</url>
             </repository>
 	</repositories>
-	 
+        
+        <profiles>
+            <profile>
+             <id>test</id>
+             <properties>
+                <env.properties>test</env.properties>
+                <dataSource>java:/sgss</dataSource>
+                <!-- I file properties effettivi sono nel modulo custom 
+                non serve mettere .properties dopo il nome del file -->
+                <connectionSDEfileName>connectionGEOT01</connectionSDEfileName>
+                <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>             
+             </properties>
+            </profile>
+            <profile>
+                <id>prod</id>
+                <properties>
+                <env.properties>prod</env.properties>
+                <dataSource>java:/sgssprod</dataSource>  
+                <!-- I file properties effettivi sono nel modulo custom 
+                non serve mettere .properties dopo il nome del file -->
+                <connectionSDEfileName>connectionGEOP01</connectionSDEfileName>
+                <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>
+                </properties>
+            </profile>
+         </profiles>
+        
+	<build>
+	</build>
+         
 	<dependencies>
             <dependency>
                 <groupId>junit</groupId>
@@ -174,20 +199,4 @@
                     <version>1.0</version>
             </dependency>
 	</dependencies>
-	
-        <!--<profiles>
-            <profile>
-                <id>test</id>
-                <properties>
-                    <env.properties>test</env.properties>
-                    <connectionSDEfileName>connectionSDE_${env.properties}.properties</connectionSDEfileName>
-                    <connectionAIMSfileName>connectionAIMS.properties</connectionAIMSfileName>                
-                </properties>
-            </profile>
-            <profile>
-                <id>prod</id>
-            </profile>
-        </profiles>-->
-	<build>
-	</build>
 </project>

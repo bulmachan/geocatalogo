@@ -1,7 +1,5 @@
 <%@ page
-	import="
-		com.esri.sde.sdk.client.*
-		, com.esri.*"
+	import="com.esri.sde.sdk.client.*, com.esri.*"
 %><%
 class micSpatialEngine {
 	

@@ -9,7 +9,7 @@
                         ResourceBundle applicationdataSourceProperties = ResourceBundle.getBundle("application");
                         String dataSource=applicationdataSourceProperties.getString("dataSource");
                         javax.sql.DataSource ds = (javax.sql.DataSource) initContext.lookup(dataSource);
-			log.info("dataSource: " + dataSource + 
+			logdb.info("dataSource: " + dataSource); 
 			dbConnCAT = ds.getConnection(); // oggetto connessione
 		} catch(Exception ee) {
 			logdb.error("configDB.jps - Errore durante la connessione al DB: "+ee);
