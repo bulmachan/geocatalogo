@@ -51,7 +51,7 @@
              <properties>
                 <env.properties>test</env.properties>
                 <dataSource>java:/sgss</dataSource>
-                <!-- I file properties effettivi sono nel modulo custom 
+                <!-- I file properties effettivi sono nel modulo custom com.sgss.settings
                 non serve mettere .properties dopo il nome del file -->
                 <connectionSDEfileName>connectionGEOT01</connectionSDEfileName>
                 <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>             
@@ -62,7 +62,7 @@
                 <properties>
                 <env.properties>prod</env.properties>
                 <dataSource>java:/sgssprod</dataSource>  
-                <!-- I file properties effettivi sono nel modulo custom 
+                <!-- I file properties effettivi sono nel modulo custom com.sgss.settings
                 non serve mettere .properties dopo il nome del file -->
                 <connectionSDEfileName>connectionGEOP01</connectionSDEfileName>
                 <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>
