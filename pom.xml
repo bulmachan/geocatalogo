@@ -10,7 +10,7 @@
 	<groupId>com.rer.sgss</groupId>
 	<artifactId>geocatalogo</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<name>Geocatalogo</name>
 	<description>Il Catalogo dei Dati Geografici consente la consultazione dei dati geografici 
 	del Servizio Geologico, Sismico e dei Suoli (SGSS).</description>
