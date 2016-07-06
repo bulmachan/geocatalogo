@@ -20,7 +20,7 @@ response.setHeader("Cache-Control","no-store");
 response.setHeader("Pragma","no-cache"); 
 response.setDateHeader("Expires", 0); 
 
-Category log = Category.getInstance("GEOCATALOGO");
+Category logextractShp = Category.getInstance("GEOCATALOGO");
 
 String layer = request.getParameter("layer");
 String[] layerParams=layer.split("\\.");
@@ -271,8 +271,8 @@ try
 			outputUrl = resp.substring(startpos,endpos);
 		}
 		
-		//log.info("EXTRACT SHP: "+layer +"\t "+ minX + "\t " + minY + "\t " + maxX + "\t " + maxY);
-		//log.info(resp);
+		//logextractShp.info("EXTRACT SHP: "+layer +"\t "+ minX + "\t " + minY + "\t " + maxX + "\t " + maxY);
+		//logextractShp.info(resp);
 		
 		if (verbose){
 			/*SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy ', ' HH:mm:ss");
@@ -284,7 +284,7 @@ try
 			Long longDate = new Long (date);
 			String dateString = longDate.toString();*/
 			
-			log.info("EXTRACT SHP: "+layer +"\t "+ minX + "\t " + minY + "\t " + maxX + "\t " + maxY);
+			logextractShp.info("EXTRACT SHP: "+layer +"\t "+ minX + "\t " + minY + "\t " + maxX + "\t " + maxY);
 			
 			/*String path = application.getRealPath("/log_extract.txt");
 			PrintWriter pw = new PrintWriter(new FileWriter(new File(path), true));

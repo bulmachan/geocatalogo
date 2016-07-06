@@ -19,7 +19,7 @@
 %><%@ include file="configDB.jsp"
 %><%
 
-Category log = Category.getInstance("GEOCATALOGO");
+Category logsaveThumb = Category.getInstance("GEOCATALOGO");
 
 ResultSet rs = null;
 Statement stm = null;

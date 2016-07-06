@@ -10,7 +10,7 @@
 <%@ page errorPage="errorpage.jsp" %>
 <%@ include file="setContentType.jsp" %>
 
-<%! static Category log = Category.getInstance("carg"); %>
+<%! static Category logDocumenti = Category.getInstance("carg"); %>
 <%
 	Documenti doc = new Documenti();
 
@@ -54,12 +54,12 @@
 		descrTestoArea = request.getParameter("descrizioneTestoArea");
 	else descrTestoArea = "";
 	
-	log.debug("tipoArea= "+tipoArea);
-	log.debug("key= "+key);
-	log.debug("provincia= "+provincia);
-	log.debug("comune= "+comune);
-	log.debug("descrArea= "+descrArea);
-	log.debug("descrTestoArea= "+descrTestoArea);
+	logDocumenti.debug("tipoArea= "+tipoArea);
+	logDocumenti.debug("key= "+key);
+	logDocumenti.debug("provincia= "+provincia);
+	logDocumenti.debug("comune= "+comune);
+	logDocumenti.debug("descrArea= "+descrArea);
+	logDocumenti.debug("descrTestoArea= "+descrTestoArea);
 %>
 <%-- <?xml version="1.0" encoding="<%=pageCharEncoding%>"?> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

@@ -16,7 +16,7 @@
 <%!
 boolean rsToXls(String nomeFile, ResultSet rs, String tableName, double count){
 
-Category log = Category.getInstance("GEOCATALOGO");
+Category logrsToXls = Category.getInstance("GEOCATALOGO");
 try {
 		String nomeFoglio=tableName;
 		
@@ -171,7 +171,7 @@ try {
 		workbook.close(); 
 		return true;
 } catch(Exception e) { 
-	log.error("rsToXls Errore: "+e.getMessage());
+	logrsToXls.error("rsToXls Errore: "+e.getMessage());
 	e.printStackTrace();
 	return false;
 }

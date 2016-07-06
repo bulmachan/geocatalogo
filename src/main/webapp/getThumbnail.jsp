@@ -19,7 +19,7 @@
 %><%@ include file="configDB.jsp"
 %><%
 
-Category log = Category.getInstance("GEOCATALOGO");
+Category loggetThumb = Category.getInstance("GEOCATALOGO");
 
 ResultSet rs = null;
 Statement stm = null;
@@ -176,7 +176,7 @@ try{
 } catch (Exception e) {
     //e.printStackTrace();
 	//out.println("Errore: "+e.getMessage());
-	log.error("Errore getThumbnail.jsp: "+request.getParameter("layer")+" ---> "+e.getMessage());
+	loggetThumb.error("Errore getThumbnail.jsp: "+request.getParameter("layer")+" ---> "+e.getMessage());
 	BufferedImage img = new BufferedImage(w,h, BufferedImage.TYPE_INT_ARGB);
 	Graphics2D g = img.createGraphics();
 	Color transparent = new Color(0, 0, 0, 0);

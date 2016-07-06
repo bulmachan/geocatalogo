@@ -10,7 +10,7 @@
 <%@include file="setContentType.jsp" %>
 
 <%!
-	static Category log = Category.getInstance("carg");
+	static Category logDocumentiTr = Category.getInstance("carg");
 
   	Connection oraConn=null;
 	ResultSet result=null;
@@ -48,9 +48,9 @@
 		statement = oraConn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 		statementCod = oraConn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 	} catch (ClassNotFoundException e) {
-			log.error("ClassNotFoundException",e);
+			logDocumentiTr.error("ClassNotFoundException",e);
 	} catch (SQLException e) {
-			log.error("SQLException",e);
+			logDocumentiTr.error("SQLException",e);
 	}
 
 	if(request.getParameter("tipoArea") != null){
@@ -71,13 +71,13 @@
 		descrTestoArea = request.getParameter("descrizioneTestoArea");
 	} else {descrTestoArea = "";}
 
-	log.debug("tipoArea= "+tipoArea);
-	log.debug("key= "+key);
-	log.debug("descrArea= "+descrArea);
-	log.debug("descrTestoArea= "+descrTestoArea);
-	log.debug("docProtocol= "+docProtocol);
-	log.debug("docServer= "+docServer);	
-	log.debug("docBasePath= "+docBasePath);
+	logDocumentiTr.debug("tipoArea= "+tipoArea);
+	logDocumentiTr.debug("key= "+key);
+	logDocumentiTr.debug("descrArea= "+descrArea);
+	logDocumentiTr.debug("descrTestoArea= "+descrTestoArea);
+	logDocumentiTr.debug("docProtocol= "+docProtocol);
+	logDocumentiTr.debug("docServer= "+docServer);	
+	logDocumentiTr.debug("docBasePath= "+docBasePath);
 %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it-IT" lang="it-IT">
 <head>

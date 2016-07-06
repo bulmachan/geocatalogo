@@ -5,7 +5,7 @@
 	errorPage=""
 	import="org.apache.log4j.Category"
 %><%
-	Category log = Category.getInstance("GEOCATALOGO");
+	Category logWrite = Category.getInstance("GEOCATALOGO");
 	
 	String tipo="";
 	if (request.getParameter("tipo")!=null){ 
@@ -23,12 +23,12 @@
 
 	
 	if(tipo.equalsIgnoreCase("info"))
-		log.info(testo);
+		logWrite.info(testo);
 	else if(tipo.equalsIgnoreCase("error"))
-		log.error(testo);
+		logWrite.error(testo);
 	else if(tipo.equalsIgnoreCase("warn"))
-		log.warn(testo);
+		logWrite.warn(testo);
 	else
-		log.debug(testo);
+		logWrite.debug(testo);
 
 %>

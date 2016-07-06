@@ -12,7 +12,7 @@
 %><%@ include file="params.jsp"
 %><%
 
-Category log = Category.getInstance("GEOCATALOGO");
+Category logcreateZip = Category.getInstance("GEOCATALOGO");
 String app = "unknown";
 if ((request.getParameter("app") != null) && (request.getParameter("app") != "")) {
 	app = request.getParameter("app");
@@ -99,14 +99,14 @@ try {
 %><%
 	
 	if(debug)	
-		log.info("createZip.jsp IP: "+request.getRemoteAddr() + "\t" +"DOWNLOAD SHP: "+shpName + ": "+ request.getParameter("size") + " app: "+ app);
+		logcreateZip.info("createZip.jsp IP: "+request.getRemoteAddr() + "\t" +"DOWNLOAD SHP: "+shpName + ": "+ request.getParameter("size") + " app: "+ app);
 	
 	// Close ZipOutputStream
 	outZip.close();
 	
 } catch(Exception ee) {
 
-	log.error("createZip.jsp - DOWNLOAD SHP: "+ee.getMessage());
+	logcreateZip.error("createZip.jsp - DOWNLOAD SHP: "+ee.getMessage());
 	//ee.printStackTrace();
 }
 

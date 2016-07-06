@@ -18,7 +18,7 @@
 %><%@ include file="params.jsp"
 %><%
 
-	Category log = Category.getInstance("GEOCATALOGO");
+	Category logdownloadXls = Category.getInstance("GEOCATALOGO");
 
 	String table=request.getParameter("table");
 	String nome=request.getParameter("nome");
@@ -94,7 +94,7 @@
 						list.doZip(outputPath, nome+"_"+x, fileSize, null, null);
 					} catch (Exception e) {
 						e.printStackTrace();
-						log.error("Errore ZIPPAGGIO");
+						logdownloadXls.error("Errore ZIPPAGGIO");
 					}
 				}
 				
@@ -102,17 +102,17 @@
 				long lenzip = filezip.length();
 				
 				if(debug)	
-					log.info("IP: "+request.getRemoteAddr() + "\t" +"DOWNLOAD XLS: "+nomeFile + ".xls: "+ String.valueOf(lenzip));
+					logdownloadXls.info("IP: "+request.getRemoteAddr() + "\t" +"DOWNLOAD XLS: "+nomeFile + ".xls: "+ String.valueOf(lenzip));
 
 				out.println(nome+"_"+x+".zip"+"<|>"+String.valueOf(lenzip));
 			} else {
-				log.error("DOWNLOAD TABLE: ERRORE "+nome+"_"+x+".zip");
+				logdownloadXls.error("DOWNLOAD TABLE: ERRORE "+nome+"_"+x+".zip");
 			}
 		
 		} catch(Exception ee) {
 			//out.print(ee.getMessage());
 			//ee.printStackTrace();
-			log.error("Catch DOWNLOAD TABLE: "+ee.getMessage());
+			logdownloadXls.error("Catch DOWNLOAD TABLE: "+ee.getMessage());
 		
 			if(rs!=null)
 				rs.close();
