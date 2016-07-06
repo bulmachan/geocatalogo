@@ -47,25 +47,25 @@
         
         <profiles>
             <profile>
-             <id>test</id>
-             <properties>
-                <env.properties>test</env.properties>
-                <dataSource>java:/sgss</dataSource>
-                <!-- I file properties effettivi sono nel modulo custom com.sgss.settings
-                non serve mettere .properties dopo il nome del file -->
-                <connectionSDEfileName>connectionGEOT01</connectionSDEfileName>
-                <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>             
-             </properties>
+                <id>test</id>
+                <properties>
+                    <env.properties>test</env.properties>
+                    <dataSource>java:/sgss</dataSource>
+                    <!-- I file properties effettivi sono nel modulo custom com.sgss.settings
+                    non serve mettere .properties dopo il nome del file -->
+                    <connectionSDEfileName>connectionGEOT01</connectionSDEfileName>
+                    <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>             
+                </properties>
             </profile>
             <profile>
                 <id>prod</id>
                 <properties>
-                <env.properties>prod</env.properties>
-                <dataSource>java:/sgssprod</dataSource>  
-                <!-- I file properties effettivi sono nel modulo custom com.sgss.settings
-                non serve mettere .properties dopo il nome del file -->
-                <connectionSDEfileName>connectionGEOP01</connectionSDEfileName>
-                <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>
+                    <env.properties>prod</env.properties>
+                    <dataSource>java:/sgssprod</dataSource>  
+                    <!-- I file properties effettivi sono nel modulo custom com.sgss.settings
+                    non serve mettere .properties dopo il nome del file -->
+                    <connectionSDEfileName>connectionGEOP01</connectionSDEfileName>
+                    <connectionAIMSfileName>connectionAIMS</connectionAIMSfileName>
                 </properties>
             </profile>
             <profile>
@@ -103,8 +103,8 @@
                         <configuration>
                           <target>
                             <copy overwrite="true"
-                                  file="${target.dir}${project.artifactId}-${project.version}-${env.properties}.${project.packaging}" 
-                                  tofile="${war.shared.directory}${project.artifactId}-${project.version}-${env.properties}.${project.packaging}" />
+                                  file="${target.dir}${project.artifactId}-${project.version}-db${env.properties}.${project.packaging}" 
+                                  tofile="${war.shared.directory}${project.artifactId}-db${env.properties}.${project.packaging}" />
                           </target>
                         </configuration>
                     </plugin>
